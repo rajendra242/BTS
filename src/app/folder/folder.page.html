@@ -1,14 +1,15 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="tolbar">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Posts</ion-title>
+      <ion-icon slot="icon-only" name="search"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true" padding>
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
@@ -16,6 +17,24 @@
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">Rjendrasinh Ratod</a></p>
+  </div> -->
+  <div text-center *ngIf="count">Found {{ count }} Posts</div>
+
+  <ion-card *ngFor="let post of posts">
+    <ion-card-header>
+      <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
+      <ion-card-subtitle>{{post.date_gmt | date}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
+      <!-- <img src="{{post.featured_image}}" > -->
+      <div [innerHTML]="post.excerpt.rendered"></div>
+      <ion-button expand="full" fill="clear" [routerLink]="['/', 'singalnews',post.id]" text-right>Read More...</ion-button>
+    </ion-card-content>
+  </ion-card> 
+
+  <!-- <ion-infinite-scroll threshold="300px" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingText="Loading More News....."></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
 </ion-content>

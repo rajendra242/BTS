@@ -1,0 +1,31 @@
+<ion-content class="background" padding>
+  <form [formGroup]="Login_Form_Data" (submit)="loginUser(Login_Form_Data.value)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12" class="settings">
+          <div text-center>
+            <!-- <IonImg src={logo.png} /> -->
+            <h1 style="text-align: center;"><img src="../../assets/logo.png" alt=""></h1>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="your@email.com" formControlName="username" name='username' required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" formControlName="password" name='password' required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button class="color_setting" size="large" type="submit" expand="block">Login</ion-button>
+          </div>
+
+          <div class="regester">
+            <ion-button [routerLink]="['/regester']" expand="block" >Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<!-- [disabled]="form.invalid" -->

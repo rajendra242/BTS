@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" padding>
+  <form [formGroup]="regester_Form_Data" (submit)="regesterUser(regester_Form_Data.value)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12" class="settings">
+          <div text-center>
+            <!-- <IonImg src={logo.png} /> -->
+            <h1 style="text-align: center;"><img src="../../assets/logo.png" alt=""></h1>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="username" type="name" placeholder="enter name" formControlName="name" name='name'
+                required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="your@email.com" formControlName="username"
+                name='username' required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" formControlName="password"
+                name='password' required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button class="color_setting" size="large" type="submit" expand="block">Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

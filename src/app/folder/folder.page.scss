@@ -26,14 +26,26 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
-img{
-  width: 100%;
-  height: 160px;
+// img{
+//   width: 100%;
+//   height: 160px;
+// }
+ion-content{
+  --background: url(../../assets/news.jpg) no-repeat top/contain fixed;
 }
 ion-toolbar {
-  --background: black;
+  --background: maroon;
   color: yellow;
 }
 ion-menu-button{
   color: yellow;
+}
+ion-buttons button{
+  outline: none;
+  color: yellow;
+  font-size: 23px;
+  background-color: maroon;
+}
+ion-list{
+  margin-top: 50%;
 }

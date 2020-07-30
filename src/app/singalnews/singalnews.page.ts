@@ -16,8 +16,14 @@ export class SingalnewsPage implements OnInit {
     console.log(id);
     this.Auth.getPostsContent(id).subscribe(res =>{
       this.post = res;
-      console.log("this is singal news ===> ", this.post);
+      // localStorage.setItem("data", JSON.stringify(this.post));
+      // console.log("this is singal news ===> ", this.post);
     })
   }
 
+  Bookmark(){
+    console.log(" Bookmark ", this.post)
+    localStorage.setItem("data", JSON.stringify(this.post));
+    console.log("Post Store In Localstoreg Succefully")
+  }
 }

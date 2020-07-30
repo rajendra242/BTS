@@ -30,7 +30,9 @@ export class AuthService {
       observe: "response" as "body",
       params: {
         par_page: '5',
-        page: '' + page
+        page: '' + page,
+        
+
       }
     };
     return this.http.get<any[]>(`${this.Post_Api}posts?_embed`, options).pipe(
@@ -46,6 +48,19 @@ export class AuthService {
         return data;
       })
     );
+  }
+  
+  search(query : string){
+      return this.http.get(this.Post_Api + query);
+  }
+
+  search1(keyword, id){
+    return this.http.get(
+      "http://localhost/trivia/wordpress//wp-json/wp/v2/posts?_embed&filter[order]=DESC&filter[posts_per_page]=5&search=" + keyword + "&page="+id
+    );
+  }
+  index(id){
+    return this.http.get('http://localhost/trivia/wordpress//wp-json/wp/v2/posts/?_embed&filter[order]=DESC&filter[posts_per_page]=5&page='+id)
   }
   getPostsContent(id) {
     return this.http.get(`${this.Post_Api}posts/${id}?_embed`).pipe(

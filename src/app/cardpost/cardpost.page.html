@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true" padding>
+
+  <div text-center *ngIf="count">Found {{ count }} Posts</div>
+
+  <ion-card *ngFor="let post of posts">
+    <ion-card-header>
+      <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
+      <ion-card-subtitle>{{post.date_gmt | date}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
+      <!-- <img src="{{post.featured_image}}" > -->
+      <div [innerHTML]="post.excerpt.rendered"></div>
+      <ion-button expand="full" fill="clear" [routerLink]="['/', 'singalnews',post.id]" text-right>Read More...
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

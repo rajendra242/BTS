@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder"></ion-back-button>
+      <!-- <ion-input type="search" [(ngModel)]="searchQuery" (change)="onSearch($event)" placeholder="Search Some thing New.....">
+
+      </ion-input> -->
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="searchKeyword" (keyup.enter)="search1(searchKeyword, $event)"
+      [showCencelButton]="shouldShowCencel" (ionInput)="onCencel($event)">
+    </ion-searchbar>
+
+
+    <!-- <ion-buttons slot="end">
+      <button ion-button icon-only (click)="clearSearch()" *ngIf="searchQuery.length>0">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- <ion-header>
+  <ion-navbar color="primary">
+    <ion-input type="search" [(ngModel)]="searchQuery" (ionChange)="onSearch()" placeholder="Search Some thing New....."></ion-input>
+  </ion-navbar>
+</ion-header> -->
+<!-- <ion-content>
+  <div text-center *ngIf="count">Found {{ count }} Posts</div>
+
+  <ion-card *ngFor="let item of itmes">
+    <ion-card-header>
+      <ion-card-title [innerHTML]="item.title.rendered"></ion-card-title>
+      <ion-card-subtitle>{{post.date_gmt | date}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}"> -->
+<!-- <img src="{{post.featured_image}}" > -->
+<!-- <div [innerHTML]="item.excerpt.rendered"></div> -->
+<!-- <ion-button expand="full" fill="clear" [routerLink]="['/', 'singalnews',post.id]" text-right>Read More... -->
+<!-- </ion-button> -->
+<!-- </ion-card-content> -->
+<!-- </ion-card> -->
+
+<!-- <ion-infinite-scroll threshold="300px" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingText="Loading More News....."></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+<!-- <ion-buttons > -->
+<!-- <button icon-only ion-button [routerLink]="['/', 'cardpost']"> -->
+<!-- <ion-icon name="Search"></ion-icon> -->
+<!-- </button> -->
+<!-- </ion-buttons> -->
+<!-- </ion-content> -->
+
+<!-- <ion-content padding>
+  <ion-card *ngFor="let item of items">
+    <img src="{{ item._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title.rendered}}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+<!-- <ion-content>
+
+  <ion-card *ngFor="let data of datas">
+
+    <ion-item *ngFor="let author of data._embedded.author">
+      <ion-avatar item-left> -->
+<!-- <img src="{{author.avatar_urls['24']}}"/> -->
+<!-- </ion-avatar> -->
+<!-- <h2>{{author.name}}</h2> -->
+<!-- <p>{{data.date | date:'dd/MM/yyyy'}}</p> -->
+<!-- </ion-item>
+
+    <div *ngFor="let thumbnail of data._embedded['wp:featuredmedia']">
+      <img src="{{thumbnail.media_details.sizes.full.source_url}}" *ngIf="thumbnail.source_url" />
+    </div>
+
+    <ion-card-content>
+      <ion-card-title>{{data.title.rendered}}</ion-card-title>
+      <div [innerHTML]="data.excerpt.rendered">
+        {{data.excerpt.rendered}}
+      </div>
+    </ion-card-content>
+
+    <button full primary padding (click)="singalnews(data._links.self[0].href)">READ MORE</button>
+
+  </ion-card> -->
+
+
+
+<ion-content [fullscreen]="true" padding>
+  <!-- <section class="banner"> -->
+  <!-- <div style="background-image: url(../../assets/news.jpg);" class="banner_img"></div> -->
+  <!-- </section> -->
+  <ion-list>
+    <!-- <ion-list-header>
+        Recent Posts
+      </ion-list-header> -->
+
+    <ion-item *ngFor="let data of datas">
+      <ion-avatar slot="start">
+        <img src="{{ data._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
+      </ion-avatar>
+      <ion-label>
+        <h2 [innerHTML]="data.title.rendered"></h2>
+        <h3>{{data.date_gmt | date}}</h3>
+        <p [innerHTML]="data.excerpt.rendered"></p>
+        <!-- <ion-router-link color="tertiary" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-router-link> -->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

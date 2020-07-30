@@ -4,21 +4,19 @@ import { Router } from "@angular/router";
 import { Route } from '@angular/compiler/src/core';
 import { LoadingController, NavController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
-// import { NavController } from 'ionic-angular';
-
 
 @Component({
-  selector: 'app-folder',
-  templateUrl: './folder.page.html',
-  styleUrls: ['./folder.page.scss'],
+  selector: 'app-cardpost',
+  templateUrl: './cardpost.page.html',
+  styleUrls: ['./cardpost.page.scss'],
 })
-export class FolderPage implements OnInit {
+export class CardpostPage implements OnInit {
   public folder: string;
   posts = [];
   page = 1;
   count = null;
 
-  constructor(
+ constructor(
     private activatedRoute: ActivatedRoute,
     private router : Router,
     private loadingCtrl : LoadingController,
@@ -62,10 +60,4 @@ export class FolderPage implements OnInit {
     });
   }
 
-  OpenSearchPage(){
-    // this.router.navigate(['search-page'])
-    // this.navCtrl.push(SearchPage)
-  }
-
-  
 }

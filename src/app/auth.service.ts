@@ -11,9 +11,18 @@ export class AuthService {
 
   toatalPost = null;
   pages: any;
+  catagories_id : any;
+  public categories : any = [];
+
+
+  // Wordpress APIs
   Post_Api = `http://localhost/trivia/wordpress//wp-json/wp/v2/`;
 
-  constructor(private http: HttpClient, private router: Router) { }
+
+  constructor(private http: HttpClient, private router: Router) {
+    // this.catagories_id =  this.router.getCurrentNavigation().extras.state
+    // console.log('servies id = ===>', this.catagories_id);
+   }
 
   login(value) {
     localStorage.setItem("value", JSON.stringify(value));
@@ -30,7 +39,8 @@ export class AuthService {
       observe: "response" as "body",
       params: {
         par_page: '5',
-        page: '' + page,
+        page : '1',
+        // page: '' + page,
         
 
       }
@@ -64,11 +74,11 @@ export class AuthService {
   }
   getPostsContent(id) {
     return this.http.get(`${this.Post_Api}posts/${id}?_embed`).pipe(
-      // map(post => {
-      //   // post['meadia_url'] = post['_embedded'] ['wp:featuredmedia'] [0] ['media_details'].sizes['medium'].source_url;
-      // })
-      
+    
     )
+  }
+  getCategories(){
+    return this.http.get('http://localhost/trivia/wordpress//wp-json/wp/v2/categories')
   }
 
 }

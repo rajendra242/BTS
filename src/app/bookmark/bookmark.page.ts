@@ -7,16 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookmarkPage implements OnInit {
   posts = [];
+  
+  unic_fav = [];
   constructor() { }
+    
 
   ngOnInit() {
-    var bookdata = localStorage.getItem('data');
-    console.log("bookdata", JSON.parse(bookdata))
-    var JsonBook = JSON.parse(bookdata);
+    var bookdata = JSON.parse(localStorage.getItem('new'));
 
-    this.posts.push(JsonBook);
-    // console.log("this is stored book mark ===>",this.posts);
-  }
+    console.log('===========>', bookdata);
+    this.posts = bookdata;
+    console.log("this is stored book mark ===>",this.posts);
+  } 
+  // let len = bookdata.length;
+  // for(let i = 0 ; i < len; i++){
+  //   if(this.unic_fav.indexOf(bookdata[i])=== -1){
+
+  //   }
+  // }
 
 
 }

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 
-import { Platform, MenuController } from '@ionic/angular';
+import { Platform, MenuController, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from './auth.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 // import { MenuController } from 'ionic-angular';
 
 @Component({
@@ -13,47 +16,50 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  login_redirect : any;
-  public appPages = [
-    {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
-    },
-    {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
-    },
-    {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
-    },
-    {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
+  login_redirect: any;
+  public appPages: any = [
+    // {
+    //   title: 'Inbox',
+    //   url: '/folder/Inbox',
+    //   icon: 'mail'
+    // },
+    // {
+    //   title: 'Outbox',
+    //   url: '/folder/Outbox',
+    //   icon: 'paper-plane'
+    // },
+    // {
+    //   title: 'Favorites',
+    //   url: '/folder/Favorites',
+    //   icon: 'heart'
+    // },
+    // {
+    //   title: 'Archived',
+    //   url: '/folder/Archived',
+    //   icon: 'archive'
+    // },
+    // {
+    //   title: 'Trash',
+    //   url: '/folder/Trash',
+    //   icon: 'trash'
+    // },
+    // {
+    //   title: 'Spam',
+    //   url: '/folder/Spam',
+    //   icon: 'warning'
+    // }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  posts: Object;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private router : Router,
-    private menuctrl : MenuController
+    private router: Router,
+    private menuctrl: MenuController,
+    private Auth: AuthService,
+    private http: HttpClient,
+    private navCtrl: NavController
   ) {
     this.initializeApp();
   }
@@ -72,15 +78,19 @@ export class AppComponent implements OnInit {
     }
 
 
-    var demo :any  = JSON.parse(localStorage.getItem("data"));
+    var demo: any = JSON.parse(localStorage.getItem("data"));
     console.log(demo);
-    if(demo){
+    if (demo) {
       this.router.navigate(['folder/folder']);
-    }else{
+    } else {
       this.router.navigate(['login'])
     }
+    this.Auth.getCategories().subscribe(res => {
+      this.appPages = res;
+      console.log("All Catagories ===>", this.appPages)
+    })
   }
-  Logout(){
+  Logout() {
     this.menuctrl.close();
     console.log('user Logout');
     this.router.navigate(['login'])
@@ -88,6 +98,7 @@ export class AppComponent implements OnInit {
   }
   closeMenu() {
     console.log
-   
+
   }
+
 }

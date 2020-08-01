@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'bookmark',
     loadChildren: () => import('./bookmark/bookmark.module').then( m => m.BookmarkPageModule)
+  },
+  {
+    path: 'catpage/:id',
+    loadChildren: () => import('./catpage/catpage.module').then( m => m.CatpagePageModule)
   }
 ];
 

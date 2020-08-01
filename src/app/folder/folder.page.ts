@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from "@angular/router";
 import { Route } from '@angular/compiler/src/core';
-import { LoadingController, NavController } from '@ionic/angular';
+import { LoadingController, NavController, NavParams } from '@ionic/angular';
 import { AuthService } from '../auth.service';
 // import { NavController } from 'ionic-angular';
 
@@ -17,16 +17,25 @@ export class FolderPage implements OnInit {
   posts = [];
   page = 1;
   count = null;
+  cat_id : any = 0; 
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router : Router,
     private loadingCtrl : LoadingController,
-    private Auth : AuthService,
-    public navCtrl : NavController ) { }
+    private Auth : AuthService,) {
+      // if(this.navParms.get('p_id') != null && this.navParms.get('p_id') != undefined){
+      //   this.cat_id = this.navParms.get('p_id');
+      // }
+
+    //  this.cat_id =  this.router.getCurrentNavigation().extras.state
+    //  console.log('rotttt ==>', this.cat_id)
+    //  this.router.navigate(['auth'],{state : this.cat_id});
+     }
 
   async ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    // console.log('===========================>',this.folder)
     let loading = await this.loadingCtrl.create({
       message : 'loding News...'
     });

@@ -15,6 +15,16 @@
     <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
     <div class="singalpage_text" [innerHTML]="post.content.rendered"></div>
 
-    <ion-button [routerLink]="['/', 'bookmark']" (click)="Bookmark()">Add To Bookmark</ion-button>
+    <ion-button  (click)="Bookmark()" [routerLink]="['/', 'bookmark']" >Add To Bookmark</ion-button>
+    <!-- <ion-icon name="bookmark" (click)="Bookmark()" [routerLink]="['/', 'bookmark']"></ion-icon> -->
+
+
+
+    
+    <ion-button expand="full" (click)="shareWhatsapp()">ShareWhatsapp</ion-button>
+    <ion-button expand="full" (click)="shareEmail()">ShareEmail</ion-button>
+    <ion-button expand="full" (click)="shareFacebook()">ShareFacebook</ion-button>
+    <ion-button expand="full" (click)="shareTwitter()">ShareTwitter</ion-button>
+
   </div>
 </ion-content>

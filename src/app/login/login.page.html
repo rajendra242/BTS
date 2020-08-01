@@ -7,6 +7,11 @@
             <!-- <IonImg src={logo.png} /> -->
             <h1 style="text-align: center;"><img src="../../assets/logo.png" alt=""></h1>
           </div>
+
+
+        <!-- Google Login -->
+       
+
           <div padding>
             <ion-item>
               <ion-input name="email" type="email" placeholder="your@email.com" formControlName="username" name='username' required></ion-input>
@@ -26,6 +31,9 @@
       </ion-row>
     </ion-grid>
   </form>
+
+  <ion-button expand="block" color="danger" (click)="doGoogleLogin()">Google Login</ion-button>
+
 </ion-content>
 
 <!-- [disabled]="form.invalid" -->

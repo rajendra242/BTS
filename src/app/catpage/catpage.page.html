@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder"></ion-back-button>
+      <ion-title>{{post?.title.rendered}}</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" padding>
+  <section class="banner">
+    <div style="background-image: url(../../assets/news.jpg);" class="banner_img"></div>
+  </section>
+  <ion-list>
+    <ion-list-header>
+      Recent Posts
+    </ion-list-header>
+
+    <ion-item *ngFor="let post of posts">
+      <ion-avatar slot="start">
+        <img src="{{ post._links['wp:featuredmedia']['0'].media_details }}">
+      </ion-avatar>
+      <ion-label>
+        <!-- <h6 [innerHTML]="post.id"></h6> -->
+        <h2 [innerHTML]="post.title.rendered"></h2>
+        <h3>{{post.date_gmt | date}}</h3>
+        <p [innerHTML]="post.excerpt.rendered"></p>
+        <ion-router-link color="tertiary" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-router-link>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { Route } from '@angular/compiler/src/core';
 import { LoadingController, NavController, NavParams } from '@ionic/angular';
 import { AuthService } from '../auth.service';
+// import { Events } from '@ionic/angular';
+
 // import { NavController } from 'ionic-angular';
 
 
@@ -17,27 +19,31 @@ export class FolderPage implements OnInit {
   posts = [];
   page = 1;
   count = null;
-  cat_id : any = 0; 
+  cat_id: any = 0;
+  appPages: any = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router : Router,
-    private loadingCtrl : LoadingController,
-    private Auth : AuthService,) {
-      // if(this.navParms.get('p_id') != null && this.navParms.get('p_id') != undefined){
-      //   this.cat_id = this.navParms.get('p_id');
-      // }
+    private router: Router,
+    private loadingCtrl: LoadingController,
+    private Auth: AuthService,
+  ) {
+    // if(this.navParms.get('p_id') != null && this.navParms.get('p_id') != undefined){
+    //   this.cat_id = this.navParms.get('p_id');
+    // }
 
     //  this.cat_id =  this.router.getCurrentNavigation().extras.state
     //  console.log('rotttt ==>', this.cat_id)
     //  this.router.navigate(['auth'],{state : this.cat_id});
-     }
+    this.open_menu()
+
+  }
 
   async ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     // console.log('===========================>',this.folder)
     let loading = await this.loadingCtrl.create({
-      message : 'loding News...'
+      message: 'loding News...'
     });
     await loading.present();
 
@@ -50,31 +56,39 @@ export class FolderPage implements OnInit {
     });
   }
 
-  async loadMore(event){
+  async loadMore(event) {
     this.page++;
 
     let loading = await this.loadingCtrl.create({
-      message : 'Loding More News...'
+      message: 'Loding More News...'
     });
     await loading.present();
 
-    this.Auth.getPosts(this.page).subscribe(res =>{
+    this.Auth.getPosts(this.page).subscribe(res => {
       this.count = this.Auth.toatalPost
       this.posts = [...this.posts, ...res];
 
       event.target.complete();
       loading.dismiss();
 
-      if(this.page = this.Auth.pages){
-        event.target.disabled= true;
+      if (this.page = this.Auth.pages) {
+        event.target.disabled = true;
       }
     });
   }
 
-  OpenSearchPage(){
+  OpenSearchPage() {
     // this.router.navigate(['search-page'])
     // this.navCtrl.push(SearchPage)
   }
+  open_menu() {
+    this.Auth.getCategories().subscribe(res => {
+      this.appPages = res;
+      this.Auth.publishSomeData({
+        foo: this.appPages
+      });
+      console.log("All Catagories ===>", this.appPages)
+    })
+  }
 
-  
 }

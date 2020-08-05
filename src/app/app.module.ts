@@ -13,9 +13,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { File } from '@ionic-native/file/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+// import { SocialSharing } from "@ionic-native/social-sharing";
+
 // import { FolderPage } from './folder/folder.page';
 import { AuthService } from './auth.service';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
+// import { Events } from '@ionic/angular';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,9 +37,11 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
     SplashScreen,
     SocialSharing,
     GooglePlus,
+    Facebook,
     File,
     AuthService,
     NavController,
+    // Events
     
     
     

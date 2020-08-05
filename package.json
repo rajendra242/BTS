@@ -21,6 +21,7 @@
     "@angular/router": "~9.1.6",
     "@capacitor/core": "2.3.0",
     "@ionic-native/core": "^5.0.7",
+    "@ionic-native/facebook": "^5.27.0",
     "@ionic-native/file": "^5.27.0",
     "@ionic-native/google-plus": "^5.22.0-beta-1",
     "@ionic-native/social-sharing": "^5.27.0",
@@ -29,10 +30,12 @@
     "@ionic/angular": "^5.0.0",
     "browse": "0.4.0",
     "cordova-android": "8.1.0",
+    "cordova-plugin-facebook4": "^6.4.0",
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-googleplus": "^8.5.0",
     "cordova-plugin-x-socialsharing": "^5.6.8",
     "cordova-res": "^0.15.1",
+    "es6-promise-plugin": "^4.2.2",
     "lodash": "^4.17.19",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
@@ -83,7 +86,14 @@
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "676934289291-h4dv27s37ra3tl73r81d372e7v6u0akr.apps.googleusercontent.com",
         "PLAY_SERVICES_VERSION": "15.0.1"
-      }
+      },
+      "cordova-plugin-facebook4": {
+        "APP_ID": "592356278341612",
+        "APP_NAME": "BTS",
+        "FACEBOOK_HYBRID_APP_EVENTS": "false",
+        "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0"
+      },
+      "cordova-plugin-x-socialsharing": {}
     },
     "platforms": [
       "android"

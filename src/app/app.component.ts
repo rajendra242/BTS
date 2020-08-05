@@ -17,6 +17,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   login_redirect: any;
+  userId: any;
   public appPages: any = [
     // {
     //   title: 'Inbox',
@@ -59,15 +60,26 @@ export class AppComponent implements OnInit {
     private menuctrl: MenuController,
     private Auth: AuthService,
     private http: HttpClient,
+    // private headers : HttpHeaders,
     private navCtrl: NavController
   ) {
     this.initializeApp();
   }
 
+
+  // ****Update****
+  Update_url = 'https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/category_sub_unsub';
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.Auth.getObservable().subscribe((data) => {
+        console.log('Data received', data);
+        this.appPages = data['foo']
+        console.log('==============>',this.appPages)
+      });
     });
   }
 
@@ -85,20 +97,42 @@ export class AppComponent implements OnInit {
     } else {
       this.router.navigate(['login'])
     }
-    this.Auth.getCategories().subscribe(res => {
-      this.appPages = res;
-      console.log("All Catagories ===>", this.appPages)
-    })
+    // this.Auth.getCategories().subscribe(res => {
+    //   this.appPages = res;
+    //   console.log("All Catagories ===>", this.appPages)
+    // })
   }
   Logout() {
     this.menuctrl.close();
     console.log('user Logout');
     this.router.navigate(['login'])
     localStorage.removeItem("data");
+    localStorage.removeItem("google_user");
+    localStorage.removeItem('userId');
   }
   closeMenu() {
     console.log
 
+  }
+
+
+  Update_subscriber(cat_id, is_subscribe) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    this.userId = localStorage.getItem('userId');
+    console.log(this.userId);
+    console.log(cat_id);
+    console.log(is_subscribe);
+    console.log('user_status')
+
+    return this.http.post(this.Update_url, `user_id=${this.userId}&cat_id=${cat_id}&is_subscribe=${is_subscribe}`, { headers, responseType: 'text' }).subscribe((data) => {
+      console.log('This is Update Data', data);
+      if (data == 'true') {
+        return this.http.get(`https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/get_categoriesjj?user_id=${this.userId}`).subscribe((data) => {
+          console.log('Khali api ====>', data);
+          this.appPages = data
+        })
+      }
+    })
   }
 
 }

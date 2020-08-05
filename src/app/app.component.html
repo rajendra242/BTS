@@ -8,20 +8,25 @@
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label [routerLink]="['/', 'catpage', p.id]">{{ p.name }}</ion-label>
+              <!-- <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon> -->
+              
+              <ion-label [routerLink]="['/', 'catpage', p.term_id]">{{ p.name }}</ion-label>
+              <div>
+                 <a href="#"><ion-icon slot="end" name="{{ p.is_subscribe === '1' ? 'home' :'star' }}" (click)="Update_subscriber(p.term_id, p.is_subscribe)"></ion-icon></a>
+              </div>
             </ion-item>
+            
           </ion-menu-toggle>
         </ion-list>
 
-        <ion-list id="labels-list">
+        <!-- <ion-list id="labels-list">
           <ion-list-header>Labels</ion-list-header>
 
           <ion-item *ngFor="let label of labels" lines="none">
             <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
             <ion-label>{{ label }}</ion-label>
           </ion-item>
-        </ion-list>
+        </ion-list> -->
         <ion-button menuClose size="large" type="submit" expand="block" (click)="Logout()">Logout</ion-button>
       </ion-content>
     </ion-menu>

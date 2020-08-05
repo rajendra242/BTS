@@ -19,7 +19,7 @@
 
     <ion-item *ngFor="let post of posts">
       <ion-avatar slot="start">
-        <img src="{{ post._links['wp:featuredmedia']['0'].media_details }}">
+        <img src="{{ post._links['wp:featuredmedia']['0'].href }}">
       </ion-avatar>
       <ion-label>
         <!-- <h6 [innerHTML]="post.id"></h6> -->

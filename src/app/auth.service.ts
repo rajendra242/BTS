@@ -16,7 +16,7 @@ export class AuthService {
 
 
   // Wordpress APIs
-  Post_Api = `http://localhost/trivia/wordpress//wp-json/wp/v2/`;
+  Post_Api = `https://rao-pharmacy.000webhostapp.com//wp-json/wp/v2/`;
 
 
   constructor(private http: HttpClient, private router: Router) {
@@ -24,13 +24,30 @@ export class AuthService {
     // console.log('servies id = ===>', this.catagories_id);
    }
 
+
+
+
+   private fooSubject = new Subject<any>();
+
+   publishSomeData(data: any) {
+       this.fooSubject.next(data);
+   }
+
+   getObservable(): Subject<any> {
+       return this.fooSubject;
+   }
+
+
+
   login(value) {
+    console.log(value)
     localStorage.setItem("value", JSON.stringify(value));
     console.log('this is value of', value)
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=UTF-8');
 
-    return this.http.get(`http://localhost/trivia/wordpress/wp-json/custom-plugin/login?username=${value.username}&password=${value.password}`,
-      { headers, responseType: 'json' });
+    return this.http.get(`https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/login?username=${value.username}&password=${value.password}`
+      );
+      // { headers, responseType: 'json' }
   }
 
 
@@ -66,11 +83,11 @@ export class AuthService {
 
   search1(keyword, id){
     return this.http.get(
-      "http://localhost/trivia/wordpress//wp-json/wp/v2/posts?_embed&filter[order]=DESC&filter[posts_per_page]=5&search=" + keyword + "&page="+id
+      "https://rao-pharmacy.000webhostapp.com//wp-json/wp/v2/posts?_embed&filter[order]=DESC&filter[posts_per_page]=5&search=" + keyword + "&page="+id
     );
   }
   index(id){
-    return this.http.get('http://localhost/trivia/wordpress//wp-json/wp/v2/posts/?_embed&filter[order]=DESC&filter[posts_per_page]=5&page='+id)
+    return this.http.get('https://rao-pharmacy.000webhostapp.com//wp-json/wp/v2/posts/?_embed&filter[order]=DESC&filter[posts_per_page]=5&page='+id)
   }
   getPostsContent(id) {
     return this.http.get(`${this.Post_Api}posts/${id}?_embed`).pipe(
@@ -78,7 +95,8 @@ export class AuthService {
     )
   }
   getCategories(){
-    return this.http.get('http://localhost/trivia/wordpress//wp-json/wp/v2/categories')
+    var user = localStorage.getItem('userId')
+    return this.http.get(`https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/get_categoriesjj?user_id=${user}`)
   }
 
 }

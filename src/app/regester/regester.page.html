@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
@@ -17,16 +17,21 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="username" type="name" placeholder="enter name" formControlName="name" name='name'
+              <ion-input name="username" type="name" placeholder="enter name" formControlName="username" name='username'
                 required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="your@email.com" formControlName="username"
+              <ion-input name="email" type="email" placeholder="enter email" formControlName="email"
                 name='username' required></ion-input>
             </ion-item>
             <ion-item>
               <ion-input name="password" type="password" placeholder="Password" formControlName="password"
                 name='password' required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="confirmPassword" formControlName="confirmPassword"
+                name='confirmPassword' required></ion-input>
             </ion-item>
           </div>
           <div padding>

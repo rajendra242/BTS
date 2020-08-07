@@ -39,6 +39,10 @@ const routes: Routes = [
   {
     path: 'catpage/:id',
     loadChildren: () => import('./catpage/catpage.module').then( m => m.CatpagePageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
   }
 ];
 

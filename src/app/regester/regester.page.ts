@@ -3,6 +3,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -11,29 +12,42 @@ import { Router } from "@angular/router";
   styleUrls: ['./regester.page.scss'],
 })
 export class RegesterPage implements OnInit {
-Add_User : any;
-regester_Form_Data:FormGroup;
-  constructor(  private http: HttpClient,private router: Router) { 
+  Add_User: any;
+  regester_Form_Data: FormGroup;
+  constructor(private http: HttpClient, private router: Router, private toastCtrl: ToastController) {
     this.regester_Form_Data = new FormGroup({
-      name : new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required)
 
     });
   }
 
   ngOnInit() {
   }
-  regesterUser(value){
+  async regesterUser(value) {
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    this.Add_User = `http://localhost/trivia/wordpress/wp-json/custom-plugin/register?`;
-    // console.log(this.Add_User);
-    return this.http.post(this.Add_User, `user_login=${value.name}&
-    &user_nicename=${value.password}
-    &user_email=${value.username}`
-    , { headers, responseType: 'text' })
-      .subscribe((data) => {
-        console.log('this is new datapost ====>', data);
+    this.Add_User = `https://btp-test.mylionsgroup.com/wp-json/custom-plugin/register`;
+    if (value.password !== value.confirmPassword) {
+      const toast = await this.toastCtrl.create({
+        message: 'enter correct password.',
+        duration: 2000
       })
+      toast.present();
+    } else {
+      return this.http.post(this.Add_User, `user_login=${value.username}&user_email=${value.email}&user_password=${value.password}`, { headers, responseType: 'text' })
+        .subscribe(async (data) => {
+          // alert('New User Regester')
+          const toast = await this.toastCtrl.create({
+            message: 'user loging successfully.',
+            duration: 2000
+          })
+          toast.present();
+          console.log('this is new datapost ====>', data);
+        })
+    }
+    // console.log(this.Add_User);
+
   }
 }

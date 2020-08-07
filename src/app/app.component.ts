@@ -6,8 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-// import { MenuController } from 'ionic-angular';
+import { ɵPLATFORM_SERVER_ID } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -60,15 +59,15 @@ export class AppComponent implements OnInit {
     private menuctrl: MenuController,
     private Auth: AuthService,
     private http: HttpClient,
-    // private headers : HttpHeaders,
-    private navCtrl: NavController
+    private navCtrl: NavController,
   ) {
+
     this.initializeApp();
   }
 
 
   // ****Update****
-  Update_url = 'https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/category_sub_unsub';
+  Update_url = 'https://btp-test.mylionsgroup.com/wp-json/custom-plugin/category_sub_unsub';
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -78,7 +77,7 @@ export class AppComponent implements OnInit {
       this.Auth.getObservable().subscribe((data) => {
         console.log('Data received', data);
         this.appPages = data['foo']
-        console.log('==============>',this.appPages)
+        console.log('==============>', this.appPages)
       });
     });
   }
@@ -101,6 +100,9 @@ export class AppComponent implements OnInit {
     //   this.appPages = res;
     //   console.log("All Catagories ===>", this.appPages)
     // })
+  //   FCMPlugin.getToken(function(token){
+  //     alert(token);
+  // });
   }
   Logout() {
     this.menuctrl.close();
@@ -117,6 +119,7 @@ export class AppComponent implements OnInit {
 
 
   Update_subscriber(cat_id, is_subscribe) {
+    console.log('=====> status',is_subscribe)
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     this.userId = localStorage.getItem('userId');
     console.log(this.userId);
@@ -127,12 +130,27 @@ export class AppComponent implements OnInit {
     return this.http.post(this.Update_url, `user_id=${this.userId}&cat_id=${cat_id}&is_subscribe=${is_subscribe}`, { headers, responseType: 'text' }).subscribe((data) => {
       console.log('This is Update Data', data);
       if (data == 'true') {
-        return this.http.get(`https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/get_categoriesjj?user_id=${this.userId}`).subscribe((data) => {
+        return this.http.get(`https://btp-test.mylionsgroup.com//wp-json/custom-plugin/get_categoriesjj?user_id=${this.userId}`).subscribe((data) => {
           console.log('Khali api ====>', data);
           this.appPages = data
         })
       }
     })
   }
+
+
+  // notification() {
+  //   this.platform.ready().then(() => {
+
+  //     alert('platform ready...');
+
+  //     this.fcm.subscribeToTopic('marketing');
+
+  //     this.fcm.getToken().then(token => {
+  //       alert(token);
+  //       // backend.registerToken(token);
+  //     });
+  //   });
+  // }
 
 }

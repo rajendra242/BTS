@@ -16,7 +16,8 @@ export class SearchPage implements OnInit {
   par_page: number = 5;
   showLoadMore = false;
   datas: any;
-
+  searchKeyword : any;
+  shouldShowCencel : any;
   constructor(private Auth: AuthService,navCtrl: NavController) {
 
     Auth.index(1).subscribe( data => {
@@ -64,8 +65,8 @@ export class SearchPage implements OnInit {
   //     url:url
   //   })
   // }
-  search1(keyword){
-    this.Auth.search1(keyword,1).subscribe(data=>{
+  search1(searchKeyword,ev){
+    this.Auth.search1(searchKeyword,1).subscribe(data=>{
       this.datas = data
     });
   }

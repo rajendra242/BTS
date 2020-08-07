@@ -12,7 +12,7 @@
               
               <ion-label [routerLink]="['/', 'catpage', p.term_id]">{{ p.name }}</ion-label>
               <div>
-                 <a href="#"><ion-icon slot="end" name="{{ p.is_subscribe === '1' ? 'home' :'star' }}" (click)="Update_subscriber(p.term_id, p.is_subscribe)"></ion-icon></a>
+                 <a href="#"><ion-icon slot="end" name="{{ p.is_subscribe === '1' ? 'heart' :'heart-outline'}}" (click)="Update_subscriber(p.term_id, p.is_subscribe)"></ion-icon></a>
               </div>
             </ion-item>
             

@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
   loginUser(value) {
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    this.add_user_url = 'http://localhost/trivia/wordpress/wp-json/custom-plugin/add_user_categories';
+    this.add_user_url = 'https://btp-test.mylionsgroup.com/wp-json/custom-plugin/add_user_categories';
     this.Auth.login(value).subscribe((data) => {
       console.log('===> Wordpress User Login ==>', data);
       JSON.stringify(data);
@@ -74,9 +74,14 @@ export class LoginPage implements OnInit {
         console.log(res);
         console.log(res.familyName);
         console.log(res.givenName);
+        // console.log(res.email);
          this.user_login_google_familyName = res.familyName
          this.user_login_google = res.givenName
          this.user_login_google_email = res.email
+         console.log(this.user_login_google_email);
+         console.log(res.userId)
+         localStorage.setItem('userId',res.userId)
+
       })
       )
       .catch(err => console.error(err));
@@ -90,17 +95,17 @@ export class LoginPage implements OnInit {
 
 
 
-    this.api = `https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/google_check`
+    this.api = `https://btp-test.mylionsgroup.com/wp-json/custom-plugin/google_check`
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    let insertgoogle = `https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/google_user_insert`
+    let insertgoogle = `https://btp-test.mylionsgroup.com/wp-json/custom-plugin/google_user_insert`
 
     console.log('google');
-    this.http.post(this.api, `email=${email}`, { headers })
+    this.http.post(this.api, `email=${this.user_login_google_email}`, { headers })
       .subscribe((data) => {
 
         if (data['error'] != 'empty') {
           console.log('this is new datapost ====>', data['error']);
-          this.http.get(`https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/login_google?username=${data[0].user_login}`,{ headers, responseType: 'text' }).subscribe((datapost) => {
+          this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/login_google?username=${data[0].user_login}`,{ headers, responseType: 'text', }).subscribe((datapost) => {
             //console.log('google data', data)
             localStorage.setItem('google_user', JSON.stringify(data));
             this.router.navigate(['folder/folder']);
@@ -110,7 +115,7 @@ export class LoginPage implements OnInit {
           return this.http.post(insertgoogle, `user_login=${this.user_login_google}&user_email=${this.user_login_google_email}`, { headers, responseType: 'text' }).subscribe((data) => {
             console.log("inser data", data);
             if (data) {
-              this.http.get(`https://rao-pharmacy.000webhostapp.com/wp-json/custom-plugin/login_google?username=${this.user_login_google_email}`,{ headers, responseType: 'text' }).subscribe((datapost) => {
+              this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/login_google?username=${this.user_login_google_email}`,{ headers, responseType: 'text' }).subscribe((datapost) => {
                 console.log('google data', datapost)
                 //localStorage.setItem('google_user', JSON.stringify(data));
                 this.router.navigate(['folder/folder']);
@@ -129,6 +134,8 @@ export class LoginPage implements OnInit {
     this.fb.login(['public_profile', 'user_friends', 'email'])
       .then((res: FacebookLoginResponse) => {
         console.log('Logged into Facebook!', res)
+        console.log(res.authResponse['userID']);
+        localStorage.setItem('userId', JSON.stringify(res.authResponse['userID']));
         this.router.navigate(['folder/folder'])
       }) 
         

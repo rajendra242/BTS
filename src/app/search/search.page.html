@@ -7,8 +7,9 @@
       </ion-input> -->
     </ion-buttons>
     <ion-searchbar [(ngModel)]="searchKeyword" (keyup.enter)="search1(searchKeyword, $event)"
-      [showCencelButton]="shouldShowCencel" (ionInput)="onCencel($event)">
+      (ionInput)="onCencel($event)">
     </ion-searchbar>
+    <!-- [showCencelButton]="shouldShowCencel" -->
 
 
     <!-- <ion-buttons slot="end">
@@ -99,18 +100,17 @@
     <!-- <ion-list-header>
         Recent Posts
       </ion-list-header> -->
-
-    <ion-item *ngFor="let data of datas">
-      <ion-avatar slot="start">
-        <img src="{{ data._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
-      </ion-avatar>
-      <ion-label>
-        <h2 [innerHTML]="data.title.rendered"></h2>
-        <h3>{{data.date_gmt | date}}</h3>
-        <p [innerHTML]="data.excerpt.rendered"></p>
-        <!-- <ion-router-link color="tertiary" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-router-link> -->
-      </ion-label>
-    </ion-item>
+    <a  *ngFor="let data of datas" [routerLink]="['/', 'singalnews',data.id]">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="{{ data._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
+        </ion-avatar>
+        <ion-label>
+          <p style="font-size: 18px; margin: 15px 15px 2px 15px; color: black;" [innerHTML]="data.title.rendered"></p>
+          <h3 style="color: red;  margin: 10px 15px 2px 15px;">{{data._embedded['wp:term']['0']['0'].name}}</h3>
+        </ion-label>
+      </ion-item>
+    </a>
   </ion-list>
 
 </ion-content>

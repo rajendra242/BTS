@@ -21,3 +21,10 @@ ion-button{
     margin-top: 10px;
     --background : black;
 }
+
+
+ion-button{
+    .google{
+        background-color: grey !important;
+    }
+}

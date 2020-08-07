@@ -7,6 +7,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 // import { File } from '@ionic-native/file/ngx';
 import * as _ from 'lodash';
+import { ToastController } from '@ionic/angular';
+import { ConditionalExpr } from '@angular/compiler';
+declare const $: any;
+
 
 @Component({
   selector: 'app-singalnews',
@@ -15,26 +19,24 @@ import * as _ from 'lodash';
 })
 export class SingalnewsPage implements OnInit {
   post: any;
+  islike : boolean = false;
   postObj = {}
   BooKSave = [];
-  text: string = 'BTS'
-  link: string = 'https://link.medium.com/JA4amAHFJ5'
-  constructor(private router: ActivatedRoute, private Auth: AuthService, http: HttpClient, private socialSharing: SocialSharing) { }
+  constructor(private router: ActivatedRoute, private Auth: AuthService, http: HttpClient, private socialSharing: SocialSharing,private toastCtrl: ToastController) { }
 
   ngOnInit() {
     let id = this.router.snapshot.paramMap.get('id');
     console.log(id);
     this.Auth.getPostsContent(id).subscribe(res => {
       this.post = res;
-
-      // localStorage.setItem("data", JSON.stringify(this.post));
-      // console.log("this is singal news ===> ", this.post);
     })
 
   }
 
 
-  Bookmark() {
+  async Bookmark() {
+
+    
     let tempData = [];
     let tempBuffer;
     console.log(" Bookmark ", this.post)
@@ -49,49 +51,39 @@ export class SingalnewsPage implements OnInit {
       var index = _.findIndex(tempData, function (o) { return o.id === Id })
         if (index == -1) {
           tempData.push(this.post)
+          console.log('Newpost');
+          const toast = await this.toastCtrl.create({
+            message: 'post added in bookmark',
+            duration: 2000
+          })
+          toast.present();
         }else{
           console.log('Already added');
+          const toast = await this.toastCtrl.create({
+            message: 'post all ready in bookmark',
+            duration: 2000
+          })
+          toast.present();
         }
      
+    }else{
+      tempData.push(this.post)
+      const toast = await this.toastCtrl.create({
+        message: 'post added in bookmark',
+        duration: 2000
+      })
+      toast.present();
     }
   
-    // console.log('=======> BookSave Array', this.BooKSave);
-      localStorage.setItem("new", JSON.stringify(tempData));
-      console.log("Post Store In Localstoreg Succefully")
-    // var localdat = JSON.parse(localStorage.getItem('data'));
-    // console.log('========> Local Storeg Array', localdat);
+      localStorage.setItem("new", JSON.stringify(tempData));    
 
   }
 
-  // shareWhatsapp() {
-  //   this.socialSharing.shareViaWhatsApp(this.text, this.imgurl, this.link)
-  //     .then(() => {
-
-  //     }).catch(e => {
-
-  //     })
-  // }
-  // shareEmail() {
-
-  // }
-  // shareFacebook() {
-
-  // }
-  // shareTwitter() {
-  //   this.socialSharing.shareViaTwitter(this.text).then(() => {
-
-  //   }).catch(e => {
-
-  //   })
-  // }
   sShare(post){
+    console.log(post.link);
     var options = {
-      message : post,
-      // imgurl:  '(../../assets/news.jpg)',
-      // appPackageName:'io.ionic.starter',
-      // url : 'https://rao-pharmacy.000webhostapp.com/',
- 
-     
+       url      : post.link,
+       message : post.content.slug
     }
     this.socialSharing.shareWithOptions(options);
 

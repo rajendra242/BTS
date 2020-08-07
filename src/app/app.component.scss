@@ -51,6 +51,7 @@ ion-menu.md ion-item {
 
 ion-menu.md ion-item.selected {
   --background: rgba(var(--ion-color-primary-rgb), 0.14);
+  font-size: 35px !important;
 }
 
 ion-menu.md ion-item.selected ion-icon {
@@ -59,6 +60,7 @@ ion-menu.md ion-item.selected ion-icon {
 
 ion-menu.md ion-item ion-icon {
   color: #616e7e;
+  font-size: 35px !important;
 }
 
 ion-menu.md ion-item ion-label {

@@ -19,8 +19,22 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { AuthService } from './auth.service';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
-// import { Events } from '@ionic/angular';
+// import { Firebase } from '@ionic-native/firebase/ngx';
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFirestoreModule } from '@angularfire2/firestore';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import {FCM} from '@ionic-native/fcm/ngx'
 
+// import { Events } from '@ionic/angular';
+// const config = {
+//   apiKey: "AIzaSyD-K6SlFECXKmd8iHwEvggVtavKgyPF2k8",
+//   authDomain: "angular2-course-9270e.firebaseapp.com",
+//   databaseURL: "https://angular2-course-9270e.firebaseio.com",
+//   projectId: "angular2-course-9270e",
+//   storageBucket: "angular2-course-9270e.appspot.com",
+//   messagingSenderId: "443316848633"
+// };
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +45,9 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    // AngularFireModule.initializeApp(config),
+    // AngularFirestoreModule,
+    // AngularFireModule
   ],
   providers: [
     StatusBar,
@@ -41,7 +58,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     File,
     AuthService,
     NavController,
-    // Events
+    
     
     
     

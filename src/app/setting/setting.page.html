@@ -1,0 +1,15 @@
+<ion-header [translucent]="true" class="tolbar">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder">
+        <ion-icon name="home"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>options</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div>
+      <ion-router-link [routerLink]="['/', 'bookmark']"><ion-icon name="bookmark"></ion-icon>Book Marks</ion-router-link>
+    </div>
+</ion-content>

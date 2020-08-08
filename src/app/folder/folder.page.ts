@@ -37,6 +37,7 @@ export class FolderPage implements OnInit {
     //  this.router.navigate(['auth'],{state : this.cat_id});
     this.open_menu()
 
+
   }
 
   async ngOnInit() {
@@ -90,5 +91,13 @@ export class FolderPage implements OnInit {
       console.log("All Catagories ===>", this.appPages)
     })
   }
+  doRefresh(event) {
+    console.log('Begin async operation');
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+
+  }
 }

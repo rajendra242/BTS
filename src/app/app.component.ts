@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Router } from "@angular/router";
 
 import { Platform, MenuController, NavController } from '@ionic/angular';
@@ -7,6 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ɵPLATFORM_SERVER_ID } from '@angular/common';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { SingalnewsPage } from './singalnews/singalnews.page';
+import { FolderPage } from './folder/folder.page';
+
 
 @Component({
   selector: 'app-root',
@@ -17,38 +21,7 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   login_redirect: any;
   userId: any;
-  public appPages: any = [
-    // {
-    //   title: 'Inbox',
-    //   url: '/folder/Inbox',
-    //   icon: 'mail'
-    // },
-    // {
-    //   title: 'Outbox',
-    //   url: '/folder/Outbox',
-    //   icon: 'paper-plane'
-    // },
-    // {
-    //   title: 'Favorites',
-    //   url: '/folder/Favorites',
-    //   icon: 'heart'
-    // },
-    // {
-    //   title: 'Archived',
-    //   url: '/folder/Archived',
-    //   icon: 'archive'
-    // },
-    // {
-    //   title: 'Trash',
-    //   url: '/folder/Trash',
-    //   icon: 'trash'
-    // },
-    // {
-    //   title: 'Spam',
-    //   url: '/folder/Spam',
-    //   icon: 'warning'
-    // }
-  ];
+  public appPages: any = [];
   posts: Object;
 
   constructor(
@@ -59,10 +32,23 @@ export class AppComponent implements OnInit {
     private menuctrl: MenuController,
     private Auth: AuthService,
     private http: HttpClient,
-    private navCtrl: NavController,
-  ) {
+    private navController: NavController,
+    private deeplinks: Deeplinks)
+     {
 
     this.initializeApp();
+
+    this.platform.ready().then(() => {
+      this.deeplinks.route({
+        '/folder/folder': FolderPage,
+        '/singalnews': SingalnewsPage
+      }).subscribe((match) => {
+        console.log('successfully matched route', match)
+      },
+        (nomatch) => {
+          console.error('Got a deeplink that didn\'t match', nomatch);
+        })
+    })
   }
 
 
@@ -96,13 +82,6 @@ export class AppComponent implements OnInit {
     } else {
       this.router.navigate(['login'])
     }
-    // this.Auth.getCategories().subscribe(res => {
-    //   this.appPages = res;
-    //   console.log("All Catagories ===>", this.appPages)
-    // })
-  //   FCMPlugin.getToken(function(token){
-  //     alert(token);
-  // });
   }
   Logout() {
     this.menuctrl.close();
@@ -114,18 +93,15 @@ export class AppComponent implements OnInit {
   }
   closeMenu() {
     console.log
-
   }
 
 
   Update_subscriber(cat_id, is_subscribe) {
-    console.log('=====> status',is_subscribe)
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     this.userId = localStorage.getItem('userId');
     console.log(this.userId);
     console.log(cat_id);
-    console.log(is_subscribe);
-    console.log('user_status')
+    console.log('status of user subscribe', is_subscribe);
 
     return this.http.post(this.Update_url, `user_id=${this.userId}&cat_id=${cat_id}&is_subscribe=${is_subscribe}`, { headers, responseType: 'text' }).subscribe((data) => {
       console.log('This is Update Data', data);
@@ -137,20 +113,5 @@ export class AppComponent implements OnInit {
       }
     })
   }
-
-
-  // notification() {
-  //   this.platform.ready().then(() => {
-
-  //     alert('platform ready...');
-
-  //     this.fcm.subscribeToTopic('marketing');
-
-  //     this.fcm.getToken().then(token => {
-  //       alert(token);
-  //       // backend.registerToken(token);
-  //     });
-  //   });
-  // }
 
 }

@@ -16,6 +16,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 // import { SocialSharing } from "@ionic-native/social-sharing";
 
 // import { FolderPage } from './folder/folder.page';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import { AuthService } from './auth.service';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
@@ -58,9 +59,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     File,
     AuthService,
     NavController,
-    
-    
-    
+    Deeplinks,
     
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -17,7 +17,7 @@ export class CatpagePage implements OnInit {
   ngOnInit() {
     let id = this.router.snapshot.paramMap.get('id');
     console.log(id);
-    this.http.get('https://https://btp-test.mylionsgroup.com/wp-json/wp/v2/posts?'+'&categories='+id).subscribe(res => {
+    this.http.get('https://btp-test.mylionsgroup.com/wp-json/wp/v2/posts?'+'categories='+id).subscribe(res => {
       this.posts = res;
       console.log('this is catagury data ==>', this.posts)
       // console.log(this.posts[0])

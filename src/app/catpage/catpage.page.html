@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/folder"></ion-back-button>
-      <ion-title>{{posts?.title.rendered}}</ion-title>
+      <ion-title>{{posts?.title}}</ion-title>
       <!-- post -->
     </ion-buttons>
   </ion-toolbar>
@@ -13,22 +13,18 @@
   <section class="banner">
     <div style="background-image: url(../../assets/news.jpg);" class="banner_img"></div>
   </section>
-  <ion-list>
-    <ion-list-header>
-      Recent Posts
-    </ion-list-header>
-
-    <ion-item *ngFor="let post of posts">
-      <ion-avatar slot="start">
-        <img src="{{post._links['wp:featuredmedia']['0'].href }}">
-      </ion-avatar>
-      <ion-label>
-        <!-- <h6 [innerHTML]="post.id"></h6> -->
-        <h2 [innerHTML]="post.title.rendered"></h2>
-        <h3>{{post.date_gmt | date}}</h3>
-        <p [innerHTML]="post.excerpt.rendered"></p>
-        <ion-router-link color="tertiary" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-router-link>
-      </ion-label>
-    </ion-item>
+  <ion-list  *ngIf="posts.length">
+    <a *ngFor="let post of posts" [routerLink]="['/', 'singalnews',post.id]">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="{{ post.better_featured_image.source_url}}">
+        </ion-avatar>
+        <ion-label>
+          <p style="font-size: 18px; margin: 15px 15px 2px 15px; color: black;" [innerHTML]="post.title.rendered"></p>
+          <p  style="font-size: 18px; margin: 15px 15px 2px 15px; color: black;" [innerHTML]="post.excerpt.rendered"></p>
+        </ion-label>
+      </ion-item>
+    </a>
   </ion-list>
 </ion-content>
+

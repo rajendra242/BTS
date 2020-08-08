@@ -27,6 +27,9 @@ export class RegesterPage implements OnInit {
   ngOnInit() {
   }
   async regesterUser(value) {
+    console.log(value.username);
+    console.log(value.email)
+    console.log(value.password)
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     this.Add_User = `https://btp-test.mylionsgroup.com/wp-json/custom-plugin/register`;
     if (value.password !== value.confirmPassword) {
@@ -36,11 +39,11 @@ export class RegesterPage implements OnInit {
       })
       toast.present();
     } else {
-      return this.http.post(this.Add_User, `user_login=${value.username}&user_email=${value.email}&user_password=${value.password}`, { headers, responseType: 'text' })
+      return this.http.post(this.Add_User, `user_login=${value.username}&user_pass=${value.password}&user_email=${value.email}`, { headers, responseType: 'text' })
         .subscribe(async (data) => {
           // alert('New User Regester')
           const toast = await this.toastCtrl.create({
-            message: 'user loging successfully.',
+            message: 'user successfully register.',
             duration: 2000
           })
           toast.present();

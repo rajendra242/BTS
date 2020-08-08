@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&theme=twentytwenty -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Edit Themes ‹ Trivia Post — WordPress</title>
+<script type="text/javascript">
+addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+var ajaxurl = '/wp-admin/admin-ajax.php',
+	pagenow = 'theme-editor',
+	typenow = '',
+	adminpage = 'theme-editor-php',
+	thousandsSeparator = ',',
+	decimalPoint = '.',
+	isRtl = 0;
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" href="./Edit Themes ‹ Trivia Post — WordPress_files/load-styles.php" media="all">
+<link rel="stylesheet" id="wp-codemirror-css" href="./Edit Themes ‹ Trivia Post — WordPress_files/codemirror.min.css" media="all">
+<!--[if lte IE 7]>
+<link rel='stylesheet' id='ie-css'  href='https://btp-test.mylionsgroup.com/wp-admin/css/ie.min.css?ver=5.4.2' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="onesignal-admin-styles-css" href="./Edit Themes ‹ Trivia Post — WordPress_files/onesignal-menu-styles.css" media="all">
+<link rel="stylesheet" id="CustomCSS-css" href="./Edit Themes ‹ Trivia Post — WordPress_files/style.css" media="all">
+		<script>
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/btp-test.mylionsgroup.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Edit Themes ‹ Trivia Post — WordPress_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		
+<script>
+/* <![CDATA[ */
+var userSettings = {"url":"\/","uid":"1","time":"1596796768","secure":"1"};/* ]]> */
+</script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/load-scripts.php"></script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/code-editor.min.js.download"></script>
+<script>
+jQuery.extend( wp.codeEditor.defaultSettings, {"codemirror":{"indentUnit":4,"indentWithTabs":true,"inputStyle":"contenteditable","lineNumbers":true,"lineWrapping":true,"styleActiveLine":true,"continueComments":true,"extraKeys":{"Ctrl-Space":"autocomplete","Ctrl-\/":"toggleComment","Cmd-\/":"toggleComment","Alt-F":"findPersistent","Ctrl-F":"findPersistent","Cmd-F":"findPersistent"},"direction":"ltr","gutters":[],"mode":"php","autoCloseBrackets":true,"autoCloseTags":true,"matchBrackets":true,"matchTags":{"bothTags":true}},"csslint":{"errors":true,"box-model":true,"display-property-grouping":true,"duplicate-properties":true,"known-properties":true,"outline-none":true},"jshint":{"boss":true,"curly":true,"eqeqeq":true,"eqnull":true,"es3":true,"expr":true,"immed":true,"noarg":true,"nonbsp":true,"onevar":true,"quotmark":"single","trailing":true,"undef":true,"unused":true,"browser":true,"globals":{"_":false,"Backbone":false,"jQuery":false,"JSON":false,"wp":false}},"htmlhint":{"tagname-lowercase":true,"attr-lowercase":true,"attr-value-double-quotes":false,"doctype-first":false,"tag-pair":true,"spec-char-escape":true,"id-unique":true,"src-not-empty":true,"attr-no-duplication":true,"alt-require":true,"space-tab-mixed-disabled":"tab","attr-unsafe-chars":true}} );
+</script>
+<script>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/wp-util.min.js.download"></script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/wp-sanitize.min.js.download"></script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/core.min.js.download"></script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/wp-polyfill.min.js.download"></script>
+<script>
+( 'fetch' in window ) || document.write( '<script src="https://btp-test.mylionsgroup.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://btp-test.mylionsgroup.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://btp-test.mylionsgroup.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://btp-test.mylionsgroup.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://btp-test.mylionsgroup.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://btp-test.mylionsgroup.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/dom-ready.min.js.download"></script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/a11y.min.js.download"></script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/theme-plugin-editor.min.js.download"></script>
+<script>
+wp.themePluginEditor.l10n = {"saveAlert":"The changes you made will be lost if you navigate away from this page.","saveError":"Something went wrong. Your change may not have been saved. Please try again. There is also a chance that you may need to manually fix and upload the file over FTP.","lintError":{"singular":"There is %d error which must be fixed before you can update this file.","plural":"There are %d errors which must be fixed before you can update this file."}};
+jQuery( function( $ ) { wp.themePluginEditor.init( $( "#template" ), {"codeEditor":{"codemirror":{"indentUnit":4,"indentWithTabs":true,"inputStyle":"contenteditable","lineNumbers":true,"lineWrapping":true,"styleActiveLine":true,"continueComments":true,"extraKeys":{"Ctrl-Space":"autocomplete","Ctrl-\/":"toggleComment","Cmd-\/":"toggleComment","Alt-F":"findPersistent","Ctrl-F":"findPersistent","Cmd-F":"findPersistent"},"direction":"ltr","gutters":[],"mode":"php","autoCloseBrackets":true,"autoCloseTags":true,"matchBrackets":true,"matchTags":{"bothTags":true}},"csslint":{"errors":true,"box-model":true,"display-property-grouping":true,"duplicate-properties":true,"known-properties":true,"outline-none":true},"jshint":{"boss":true,"curly":true,"eqeqeq":true,"eqnull":true,"es3":true,"expr":true,"immed":true,"noarg":true,"nonbsp":true,"onevar":true,"quotmark":"single","trailing":true,"undef":true,"unused":true,"browser":true,"globals":{"_":false,"Backbone":false,"jQuery":false,"JSON":false,"wp":false}},"htmlhint":{"tagname-lowercase":true,"attr-lowercase":true,"attr-value-double-quotes":false,"doctype-first":false,"tag-pair":true,"spec-char-escape":true,"id-unique":true,"src-not-empty":true,"attr-no-duplication":true,"alt-require":true,"space-tab-mixed-disabled":"tab","attr-unsafe-chars":true}}} ); } )
+wp.themePluginEditor.themeOrPlugin = "theme";
+</script>
+<style type="text/css" media="all">
+	@font-face {
+		font-family: 'servmask';
+		src: url('/wp-content/plugins/all-in-one-wp-migration/lib/view/assets/font/servmask.eot?v=6.68');
+		src: url('/wp-content/plugins/all-in-one-wp-migration/lib/view/assets/font/servmask.eot?v=6.68#iefix') format('embedded-opentype'),
+		url('/wp-content/plugins/all-in-one-wp-migration/lib/view/assets/font/servmask.woff?v=6.68') format('woff'),
+		url('/wp-content/plugins/all-in-one-wp-migration/lib/view/assets/font/servmask.ttf?v=6.68') format('truetype'),
+		url('/wp-content/plugins/all-in-one-wp-migration/lib/view/assets/font/servmask.svg?v=6.68#servmask') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	[class^="ai1wm-icon-"], [class*=" ai1wm-icon-"] {
+		font-family: 'servmask';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.ai1wm-icon-notification:before {
+		content: "\e619";
+	}
+
+	.ai1wm-label {
+		border: 1px solid #5cb85c;
+		background-color: transparent;
+		color: #5cb85c;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-weight: 600;
+		outline: none;
+		transition: background-color 0.2s ease-out;
+		padding: .2em .6em;
+		font-size: 0.8em;
+		border-radius: 5px;
+		text-decoration: none !important;
+	}
+
+	.ai1wm-label:hover {
+		background-color: #5cb85c;
+		color: #fff;
+	}
+
+		.toplevel_page_site-migration-export > div.wp-menu-image:before {
+		position: relative;
+		display: inline-block;
+		content: '';
+		background: url('/wp-content/plugins/all-in-one-wp-migration/lib/view/assets/img/logo-20x20.png') no-repeat center center;
+		speak: none !important;
+		font-style: normal !important;
+		font-weight: normal !important;
+		font-variant: normal !important;
+		text-transform: none !important;
+		line-height: 1 !important;
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased !important;
+		-moz-osx-font-smoothing: grayscale !important;
+	}
+
+	.wp-menu-open.toplevel_page_site-migration-export,
+	.wp-menu-open.toplevel_page_site-migration-export > a {
+		background-color: #111 !important;
+	}
+	</style>
+	<link id="wp-admin-canonical" rel="canonical" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty">
+	<script>
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, document.getElementById( 'wp-admin-canonical' ).href + window.location.hash );
+		}
+	</script>
+	<script type="text/javascript">var _wpColorScheme = {"icons":{"base":"#a0a5aa","focus":"#00a0d2","current":"#fff"}};</script>
+<style media="print">#wpadminbar { display:none; }</style>
+	</head>
+<body class="wp-admin wp-core-ui js theme-editor-php auto-fold admin-bar branch-5-4 version-5-4-2 admin-color-fresh locale-en-us customize-support svg" data-gr-c-s-loaded="true">
+<script type="text/javascript">
+	document.body.className = document.body.className.replace('no-js','js');
+</script>
+
+	<!--[if lte IE 8]>
+		<script>
+			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+		</script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script>
+			(function() {
+				var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+						request = true;
+		
+				b[c] = b[c].replace( rcs, ' ' );
+				// The customizer requires postMessage and CORS (if the site is cross domain).
+				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+			}());
+		</script>
+	<!--<![endif]-->
+	
+<div id="wpwrap">
+
+<div id="adminmenumain" role="navigation" aria-label="Main menu">
+<a href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty#wpbody-content" class="screen-reader-shortcut">Skip to main content</a>
+<a href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty#wp-toolbar" class="screen-reader-shortcut">Skip to toolbar</a>
+<div id="adminmenuback"></div>
+<div id="adminmenuwrap">
+<ul id="adminmenu">
+
+
+	<li class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" id="menu-dashboard">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/index.php" class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-dashboard"><br></div><div class="wp-menu-name">Dashboard</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Dashboard</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/index.php" class="wp-first-item">Home</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/update-core.php">Updates <span class="update-plugins count-2"><span class="update-count">2</span></span></a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-post open-if-no-js menu-top-first" id="menu-posts">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/edit.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-post open-if-no-js menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-post"><br></div><div class="wp-menu-name">Posts</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Posts</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/edit.php" class="wp-first-item">All Posts</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/post-new.php">Add New</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/edit-tags.php?taxonomy=category">Categories</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/edit-tags.php?taxonomy=post_tag">Tags</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_notification" id="toplevel_page_notification"><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=notification" class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_notification" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-email-alt"><br></div><div class="wp-menu-name">Push Notification</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Push Notification</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=notification" class="wp-first-item">Push Notification</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=notify-settings">Settings</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" id="menu-media">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/upload.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-media"><br></div><div class="wp-menu-name">Media</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Media</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/upload.php" class="wp-first-item">Library</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/media-new.php">Add New</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-page" id="menu-pages">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/edit.php?post_type=page" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-page" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-page"><br></div><div class="wp-menu-name">Pages</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Pages</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/edit.php?post_type=page" class="wp-first-item">All Pages</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/post-new.php?post_type=page">Add New</a></li></ul></li>
+	<li class="wp-not-current-submenu menu-top menu-icon-comments menu-top-last" id="menu-comments">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/edit-comments.php" class="wp-not-current-submenu menu-top menu-icon-comments menu-top-last"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-comments"><br></div><div class="wp-menu-name">Comments <span class="awaiting-mod count-0"><span class="pending-count" aria-hidden="true">0</span><span class="comments-in-moderation-text screen-reader-text">0 Comments in moderation</span></span></div></a></li>
+	<li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-appearance menu-top-first" id="menu-appearance">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/themes.php" class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-appearance menu-top-first" aria-haspopup="false"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-appearance"><br></div><div class="wp-menu-name">Appearance</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Appearance</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/themes.php" class="wp-first-item">Themes</a></li><li class="hide-if-no-customize"><a href="https://btp-test.mylionsgroup.com/wp-admin/customize.php?return=%2Fwp-admin%2Ftheme-editor.php%3Ffile%3Dfunctions.php%26theme%3Dtwentytwenty" class="hide-if-no-customize">Customize</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/widgets.php">Widgets</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/nav-menus.php">Menus</a></li><li class="hide-if-no-customize"><a href="https://btp-test.mylionsgroup.com/wp-admin/customize.php?return=%2Fwp-admin%2Ftheme-editor.php%3Ffile%3Dfunctions.php%26theme%3Dtwentytwenty&amp;autofocus%5Bcontrol%5D=background_image" class="hide-if-no-customize">Background</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/themes.php?page=custom-background">Background</a></li><li class="current"><a href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php" class="current" aria-current="page">Theme Editor</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" id="menu-plugins">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/plugins.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-plugins"><br></div><div class="wp-menu-name">Plugins <span class="update-plugins count-2"><span class="plugin-count">2</span></span></div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Plugins <span class="update-plugins count-2"><span class="plugin-count">2</span></span></li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/plugins.php" class="wp-first-item">Installed Plugins</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/plugin-install.php">Add New</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/plugin-editor.php">Plugin Editor</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" id="menu-users">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/users.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-users"><br></div><div class="wp-menu-name">Users</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Users</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/users.php" class="wp-first-item">All Users</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/user-new.php">Add New</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/profile.php">Your Profile</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-tools" id="menu-tools">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/tools.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-tools" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-tools"><br></div><div class="wp-menu-name">Tools</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Tools</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/tools.php" class="wp-first-item">Available Tools</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/import.php">Import</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/export.php">Export</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/site-health.php">Site Health</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/export-personal-data.php">Export Personal Data</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/erase-personal-data.php">Erase Personal Data</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-generic toplevel_page_site-migration-export" id="toplevel_page_site-migration-export"><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=site-migration-export" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-generic toplevel_page_site-migration-export" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-generic"><br></div><div class="wp-menu-name">All-in-One WP Migration</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">All-in-One WP Migration</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=site-migration-export" class="wp-first-item">Export</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=site-migration-import">Import</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=site-migration-backups">Backups</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-settings menu-top-last" id="menu-settings">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/options-general.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-settings menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-settings"><br></div><div class="wp-menu-name">Settings</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head" aria-hidden="true">Settings</li><li class="wp-first-item"><a href="https://btp-test.mylionsgroup.com/wp-admin/options-general.php" class="wp-first-item">General</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/options-writing.php">Writing</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/options-reading.php">Reading</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/options-discussion.php">Discussion</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/options-media.php">Media</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/options-permalink.php">Permalinks</a></li><li><a href="https://btp-test.mylionsgroup.com/wp-admin/options-privacy.php">Privacy</a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true"><div class="separator"></div></li>
+	<li class="wp-not-current-submenu menu-top menu-icon-generic toplevel_page_onesignal-push menu-top-first menu-top-last" id="toplevel_page_onesignal-push">
+	<a href="https://btp-test.mylionsgroup.com/wp-admin/admin.php?page=onesignal-push" class="wp-not-current-submenu menu-top menu-icon-generic toplevel_page_onesignal-push menu-top-first menu-top-last"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-generic"><br></div><div class="wp-menu-name">OneSignal Push</div></a></li><li id="collapse-menu" class="hide-if-no-js"><button type="button" id="collapse-button" aria-label="Collapse Main menu" aria-expanded="true"><span class="collapse-button-icon" aria-hidden="true"></span><span class="collapse-button-label">Collapse menu</span></button></li></ul>
+</div>
+</div>
+<div id="wpcontent">
+
+		<div id="wpadminbar" class="nojq">
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu"><li id="wp-admin-bar-menu-toggle"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty#" aria-expanded="false"><span class="ab-icon"></span><span class="screen-reader-text">Menu</span></a></li><li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" aria-haspopup="true" href="https://btp-test.mylionsgroup.com/wp-admin/about.php"><span class="ab-icon"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu"><li id="wp-admin-bar-about"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/about.php">About WordPress</a></li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu"><li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li><li id="wp-admin-bar-documentation"><a class="ab-item" href="https://codex.wordpress.org/">Documentation</a></li><li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/">Support</a></li><li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li></ul></div></li><li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" aria-haspopup="true" href="https://btp-test.mylionsgroup.com/">Trivia Post</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu"><li id="wp-admin-bar-view-site"><a class="ab-item" href="https://btp-test.mylionsgroup.com/">Visit Site</a></li></ul></div></li><li id="wp-admin-bar-updates"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/update-core.php" title="2 Plugin Updates"><span class="ab-icon"></span><span class="ab-label">2</span><span class="screen-reader-text">2 Plugin Updates</span></a></li><li id="wp-admin-bar-comments"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/edit-comments.php"><span class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text comments-in-moderation-text">0 Comments in moderation</span></a></li><li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" aria-haspopup="true" href="https://btp-test.mylionsgroup.com/wp-admin/post-new.php"><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu"><li id="wp-admin-bar-new-post"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/post-new.php">Post</a></li><li id="wp-admin-bar-new-media"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/media-new.php">Media</a></li><li id="wp-admin-bar-new-page"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/post-new.php?post_type=page">Page</a></li><li id="wp-admin-bar-new-user"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/user-new.php">User</a></li></ul></div></li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true" href="https://btp-test.mylionsgroup.com/wp-admin/profile.php">Howdy, <span class="display-name">admin</span><img alt="" src="./Edit Themes ‹ Trivia Post — WordPress_files/32d412a375d4c557c2abde0d2cd1eac2.png" srcset="https://secure.gravatar.com/avatar/32d412a375d4c557c2abde0d2cd1eac2?s=52&amp;d=mm&amp;r=g 2x" class="avatar avatar-26 photo" height="26" width="26"></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu"><li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/profile.php"><img alt="" src="./Edit Themes ‹ Trivia Post — WordPress_files/32d412a375d4c557c2abde0d2cd1eac2(1).png" srcset="https://secure.gravatar.com/avatar/32d412a375d4c557c2abde0d2cd1eac2?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64"><span class="display-name">admin</span></a></li><li id="wp-admin-bar-edit-profile"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-admin/profile.php">Edit My Profile</a></li><li id="wp-admin-bar-logout"><a class="ab-item" href="https://btp-test.mylionsgroup.com/wp-login.php?action=logout&amp;_wpnonce=98f634bca4">Log Out</a></li></ul></div></li></ul>			</div>
+						<a class="screen-reader-shortcut" href="https://btp-test.mylionsgroup.com/wp-login.php?action=logout&amp;_wpnonce=98f634bca4">Log Out</a>
+					</div>
+
+		
+<div id="wpbody" role="main">
+
+<div id="wpbody-content">
+		<div id="screen-meta" class="metabox-prefs">
+
+			<div id="contextual-help-wrap" class="hidden" tabindex="-1" aria-label="Contextual Help Tab">
+				<div id="contextual-help-back"></div>
+				<div id="contextual-help-columns">
+					<div class="contextual-help-tabs">
+						<ul>
+						
+							<li id="tab-link-overview" class="active">
+								<a href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty#tab-panel-overview" aria-controls="tab-panel-overview">
+									Overview								</a>
+							</li>
+													</ul>
+					</div>
+
+										<div class="contextual-help-sidebar">
+						<p><strong>For more information:</strong></p><p><a href="https://developer.wordpress.org/themes/">Documentation on Theme Development</a></p><p><a href="https://wordpress.org/support/article/using-themes/">Documentation on Using Themes</a></p><p><a href="https://wordpress.org/support/article/editing-files/">Documentation on Editing Files</a></p><p><a href="https://developer.wordpress.org/themes/basics/template-tags/">Documentation on Template Tags</a></p><p><a href="https://wordpress.org/support/">Support</a></p>					</div>
+					
+					<div class="contextual-help-tabs-wrap">
+						
+							<div id="tab-panel-overview" class="help-tab-content active">
+								<p>You can use the theme editor to edit the individual CSS and PHP files which make up your theme.</p><p>Begin by choosing a theme to edit from the dropdown menu and clicking the Select button. A list then appears of the theme’s template files. Clicking once on any file name causes the file to appear in the large Editor box.</p><p>For PHP files, you can use the Documentation dropdown to select from functions recognized in that file. Look Up takes you to a web page with reference material about that particular function.</p><p id="editor-keyboard-trap-help-1">When using a keyboard to navigate:</p><ul><li id="editor-keyboard-trap-help-2">In the editing area, the Tab key enters a tab character.</li><li id="editor-keyboard-trap-help-3">To move away from this area, press the Esc key followed by the Tab key.</li><li id="editor-keyboard-trap-help-4">Screen reader users: when in forms mode, you may need to press the Esc key twice.</li></ul><p>After typing in your edits, click Update File.</p><p><strong>Advice:</strong> Think very carefully about your site crashing if you are live-editing the theme currently in use.</p><p>Upgrading to a newer version of the same theme will override changes made here. To avoid this, consider creating a <a href="https://developer.wordpress.org/themes/advanced-topics/child-themes/">child theme</a> instead.</p>							</div>
+												</div>
+				</div>
+			</div>
+				</div>
+				<div id="screen-meta-links">
+					<div id="contextual-help-link-wrap" class="hide-if-no-js screen-meta-toggle">
+			<button type="button" id="contextual-help-link" class="button show-settings" aria-controls="contextual-help-wrap" aria-expanded="false">Help</button>
+			</div>
+				</div>
+		<div class="wrap">
+<h1>Edit Themes</h1>
+
+
+
+<div class="fileedit-sub">
+<div class="alignleft">
+<h2>
+	Twenty Twenty: Theme Functions <span>(functions.php)</span></h2>
+</div>
+<div class="alignright">
+	<form action="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php" method="get">
+		<strong><label for="theme">Select theme to edit: </label></strong>
+		<select name="theme" id="theme">
+		
+	<option value="twentynineteen">Twenty Nineteen</option>
+	<option value="twentyseventeen">Twenty Seventeen</option>
+	<option value="twentytwenty" selected="selected">Twenty Twenty</option>		</select>
+		<input type="submit" name="Submit" id="Submit" class="button" value="Select">	</form>
+</div>
+<br class="clear">
+</div>
+
+
+<div id="templateside">
+	<h2 id="theme-files-label">Theme Files</h2>
+	<ul role="tree" aria-labelledby="theme-files-label">
+				<li role="treeitem" tabindex="-1" aria-expanded="true" aria-level="1" aria-posinset="1" aria-setsize="1">
+			<ul role="group">
+						<li role="none" class="">
+			<a role="treeitem" tabindex="0" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=style.css&amp;theme=twentytwenty" aria-level="2" aria-setsize="1" aria-posinset="20">
+				Stylesheet<br><span class="nonessential">(style.css)</span>			</a>
+		</li>
+				<li role="none" class="current-file">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="2" aria-posinset="20">
+				<span class="notice notice-info">Theme Functions<br><span class="nonessential">(functions.php)</span></span>			</a>
+		</li>
+					<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="2" aria-setsize="20" aria-posinset="3">
+				<span class="folder-label">assets <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">			<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="3" aria-setsize="2" aria-posinset="1">
+				<span class="folder-label">css <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">		<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fcss%2Feditor-style-block-rtl.css&amp;theme=twentytwenty" aria-level="4" aria-setsize="1" aria-posinset="4">
+				editor-style-block-rtl.css			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fcss%2Feditor-style-block.css&amp;theme=twentytwenty" aria-level="4" aria-setsize="2" aria-posinset="4">
+				editor-style-block.css			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fcss%2Feditor-style-classic-rtl.css&amp;theme=twentytwenty" aria-level="4" aria-setsize="3" aria-posinset="4">
+				editor-style-classic-rtl.css			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fcss%2Feditor-style-classic.css&amp;theme=twentytwenty" aria-level="4" aria-setsize="4" aria-posinset="4">
+				editor-style-classic.css			</a>
+		</li>
+		</ul>
+			</li>
+						<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="3" aria-setsize="2" aria-posinset="2">
+				<span class="folder-label">js <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">		<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Fcolor-calculations.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="1" aria-posinset="7">
+				color-calculations.js			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Fcustomize-controls.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="2" aria-posinset="7">
+				customize-controls.js			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Fcustomize-preview.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="3" aria-posinset="7">
+				customize-preview.js			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Fcustomize.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="4" aria-posinset="7">
+				customize.js			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Feditor-script-block.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="5" aria-posinset="7">
+				editor-script-block.js			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Findex.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="6" aria-posinset="7">
+				index.js			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=assets%2Fjs%2Fskip-link-focus-fix.js&amp;theme=twentytwenty" aria-level="4" aria-setsize="7" aria-posinset="7">
+				skip-link-focus-fix.js			</a>
+		</li>
+		</ul>
+			</li>
+			</ul>
+			</li>
+					<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=print.css&amp;theme=twentytwenty" aria-level="2" aria-setsize="4" aria-posinset="20">
+				print.css			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=style-rtl.css&amp;theme=twentytwenty" aria-level="2" aria-setsize="5" aria-posinset="20" class="">
+				style-rtl.css			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=package-lock.json&amp;theme=twentytwenty" aria-level="2" aria-setsize="6" aria-posinset="20">
+				package-lock.json			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=package.json&amp;theme=twentytwenty" aria-level="2" aria-setsize="7" aria-posinset="20">
+				package.json			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=404.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="8" aria-posinset="20">
+				404 Template<br><span class="nonessential">(404.php)</span>			</a>
+		</li>
+					<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="2" aria-setsize="20" aria-posinset="9">
+				<span class="folder-label">classes <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">		<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-customize.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="1" aria-posinset="7">
+				class-twentytwenty-customize.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-non-latin-languages.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="2" aria-posinset="7">
+				class-twentytwenty-non-latin-languages.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-script-loader.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="3" aria-posinset="7">
+				class-twentytwenty-script-loader.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-separator-control.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="4" aria-posinset="7">
+				class-twentytwenty-separator-control.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-svg-icons.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="5" aria-posinset="7">
+				class-twentytwenty-svg-icons.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-walker-comment.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="6" aria-posinset="7">
+				class-twentytwenty-walker-comment.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=classes%2Fclass-twentytwenty-walker-page.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="7" aria-posinset="7">
+				class-twentytwenty-walker-page.php			</a>
+		</li>
+		</ul>
+			</li>
+					<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=comments.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="10" aria-posinset="20">
+				Comments<br><span class="nonessential">(comments.php)</span>			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=footer.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="11" aria-posinset="20">
+				Theme Footer<br><span class="nonessential">(footer.php)</span>			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=header.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="12" aria-posinset="20">
+				Theme Header<br><span class="nonessential">(header.php)</span>			</a>
+		</li>
+					<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="2" aria-setsize="20" aria-posinset="13">
+				<span class="folder-label">inc <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">		<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=inc%2Fcustom-css.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="1" aria-posinset="4">
+				custom-css.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=inc%2Fstarter-content.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="2" aria-posinset="4">
+				starter-content.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=inc%2Fsvg-icons.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="3" aria-posinset="4">
+				svg-icons.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=inc%2Ftemplate-tags.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="4" aria-posinset="4">
+				template-tags.php			</a>
+		</li>
+		</ul>
+			</li>
+					<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=index.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="14" aria-posinset="20">
+				Main Index Template<br><span class="nonessential">(index.php)</span>			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=searchform.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="15" aria-posinset="20">
+				Search Form<br><span class="nonessential">(searchform.php)</span>			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=singular.php&amp;theme=twentytwenty" aria-level="2" aria-setsize="16" aria-posinset="20">
+				Singular Template<br><span class="nonessential">(singular.php)</span>			</a>
+		</li>
+					<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="2" aria-setsize="20" aria-posinset="17">
+				<span class="folder-label">template-parts <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">		<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fcontent-cover.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="1" aria-posinset="10">
+				content-cover.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fcontent.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="2" aria-posinset="10">
+				content.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fentry-author-bio.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="3" aria-posinset="10">
+				entry-author-bio.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fentry-header.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="4" aria-posinset="10">
+				entry-header.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Ffeatured-image.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="5" aria-posinset="10">
+				featured-image.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Ffooter-menus-widgets.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="6" aria-posinset="10">
+				footer-menus-widgets.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fmodal-menu.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="7" aria-posinset="10">
+				modal-menu.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fmodal-search.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="8" aria-posinset="10">
+				modal-search.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fnavigation.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="9" aria-posinset="10">
+				navigation.php			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=template-parts%2Fpagination.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="10" aria-posinset="10">
+				pagination.php			</a>
+		</li>
+		</ul>
+			</li>
+						<li role="treeitem" aria-expanded="false" tabindex="-1" aria-level="2" aria-setsize="20" aria-posinset="18">
+				<span class="folder-label">templates <span class="screen-reader-text">folder</span><span aria-hidden="true" class="icon"></span></span>
+				<ul role="group" class="tree-folder">		<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=templates%2Ftemplate-cover.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="1" aria-posinset="2">
+				Cover Template Page Template<br><span class="nonessential">(templates/template-cover.php)</span>			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=templates%2Ftemplate-full-width.php&amp;theme=twentytwenty" aria-level="3" aria-setsize="2" aria-posinset="2">
+				Full Width Template Page Template<br><span class="nonessential">(templates/template-full-width.php)</span>			</a>
+		</li>
+		</ul>
+			</li>
+					<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=Untitled-1.txt&amp;theme=twentytwenty" aria-level="2" aria-setsize="19" aria-posinset="20">
+				Untitled-1.txt			</a>
+		</li>
+				<li role="none" class="">
+			<a role="treeitem" tabindex="-1" href="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php?file=readme.txt&amp;theme=twentytwenty" aria-level="2" aria-setsize="20" aria-posinset="20">
+				readme.txt			</a>
+		</li>
+					</ul>
+		</li>
+	</ul>
+</div>
+
+	<form name="template" id="template" action="https://btp-test.mylionsgroup.com/wp-admin/theme-editor.php" method="post">
+		<input type="hidden" id="nonce" name="nonce" value="a9752607a2"><input type="hidden" name="_wp_http_referer" value="/wp-admin/theme-editor.php?file=functions.php&amp;theme=twentytwenty">		<div>
+			<label for="newcontent" id="theme-plugin-editor-label">Selected file content:</label>
+			<textarea cols="70" rows="30" name="newcontent" id="newcontent" aria-describedby="editor-keyboard-trap-help-1 editor-keyboard-trap-help-2 editor-keyboard-trap-help-3 editor-keyboard-trap-help-4" style="display: none;">&lt;?php
+/**
+ * Twenty Twenty functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty
+ * @since Twenty Twenty 1.0
+ */
+
+/**
+ * Table of Contents:
+ * Theme Support
+ * Required Files
+ * Register Styles
+ * Register Scripts
+ * Register Menus
+ * Custom Logo
+ * WP Body Open
+ * Register Sidebars
+ * Enqueue Block Editor Assets
+ * Enqueue Classic Editor Styles
+ * Block Editor Settings
+ */
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function twentytwenty_theme_support() {
+
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	// Custom background color.
+	add_theme_support(
+		'custom-background',
+		array(
+			'default-color' =&gt; 'f5efe0',
+		)
+	);
+
+	// Set content-width.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 580;
+	}
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
+
+	// Set post thumbnail size.
+	set_post_thumbnail_size( 1200, 9999 );
+
+	// Add custom image size used in Cover Template.
+	add_image_size( 'twentytwenty-fullscreen', 1980, 9999 );
+
+	// Custom logo.
+	$logo_width  = 120;
+	$logo_height = 90;
+
+	// If the retina setting is active, double the recommended width and height.
+	if ( get_theme_mod( 'retina_logo', false ) ) {
+		$logo_width  = floor( $logo_width * 2 );
+		$logo_height = floor( $logo_height * 2 );
+	}
+
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      =&gt; $logo_height,
+			'width'       =&gt; $logo_width,
+			'flex-height' =&gt; true,
+			'flex-width'  =&gt; true,
+		)
+	);
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded &lt;title&gt; tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		)
+	);
+
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on Twenty Twenty, use a find and replace
+	 * to change 'twentytwenty' to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain( 'twentytwenty' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	/*
+	 * Adds starter content to highlight the theme on fresh sites.
+	 * This is done conditionally to avoid loading the starter content on every
+	 * page load, as it is a one-off operation only needed once in the customizer.
+	 */
+	if ( is_customize_preview() ) {
+		require get_template_directory() . '/inc/starter-content.php';
+		add_theme_support( 'starter-content', twentytwenty_get_starter_content() );
+	}
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/*
+	 * Adds `async` and `defer` support for scripts registered or enqueued
+	 * by the theme.
+	 */
+	$loader = new TwentyTwenty_Script_Loader();
+	add_filter( 'script_loader_tag', array( $loader, 'filter_script_loader_tag' ), 10, 2 );
+
+}
+
+add_action( 'after_setup_theme', 'twentytwenty_theme_support' );
+
+/**
+ * REQUIRED FILES
+ * Include required files.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+// Handle SVG icons.
+require get_template_directory() . '/classes/class-twentytwenty-svg-icons.php';
+require get_template_directory() . '/inc/svg-icons.php';
+
+// Handle Customizer settings.
+require get_template_directory() . '/classes/class-twentytwenty-customize.php';
+
+// Require Separator Control class.
+require get_template_directory() . '/classes/class-twentytwenty-separator-control.php';
+
+// Custom comment walker.
+require get_template_directory() . '/classes/class-twentytwenty-walker-comment.php';
+
+// Custom page walker.
+require get_template_directory() . '/classes/class-twentytwenty-walker-page.php';
+
+// Custom script loader class.
+require get_template_directory() . '/classes/class-twentytwenty-script-loader.php';
+
+// Non-latin language handling.
+require get_template_directory() . '/classes/class-twentytwenty-non-latin-languages.php';
+
+// Custom CSS.
+require get_template_directory() . '/inc/custom-css.php';
+
+/**
+ * Register and Enqueue Styles.
+ */
+function twentytwenty_register_styles() {
+
+	$theme_version = wp_get_theme()-&gt;get( 'Version' );
+
+	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
+	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
+
+	// Add output of Customizer settings as inline style.
+	wp_add_inline_style( 'twentytwenty-style', twentytwenty_get_customizer_css( 'front-end' ) );
+
+	// Add print CSS.
+	wp_enqueue_style( 'twentytwenty-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'twentytwenty_register_styles' );
+
+/**
+ * Register and Enqueue Scripts.
+ */
+function twentytwenty_register_scripts() {
+
+	$theme_version = wp_get_theme()-&gt;get( 'Version' );
+
+	if ( ( ! is_admin() ) &amp;&amp; is_singular() &amp;&amp; comments_open() &amp;&amp; get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	wp_enqueue_script( 'twentytwenty-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false );
+	wp_script_add_data( 'twentytwenty-js', 'async', true );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'twentytwenty_register_scripts' );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function twentytwenty_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
+	?&gt;
+	&lt;script&gt;
+	/(trident|msie)/i.test(navigator.userAgent)&amp;&amp;document.getElementById&amp;&amp;window.addEventListener&amp;&amp;window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&amp;&amp;(t=document.getElementById(e))&amp;&amp;(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	&lt;/script&gt;
+	&lt;?php
+}
+add_action( 'wp_print_footer_scripts', 'twentytwenty_skip_link_focus_fix' );
+
+/** Enqueue non-latin language styles
+ *
+ * @since Twenty Twenty 1.0
+ *
+ * @return void
+ */
+function twentytwenty_non_latin_languages() {
+	$custom_css = TwentyTwenty_Non_Latin_Languages::get_non_latin_css( 'front-end' );
+
+	if ( $custom_css ) {
+		wp_add_inline_style( 'twentytwenty-style', $custom_css );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'twentytwenty_non_latin_languages' );
+
+/**
+ * Register navigation menus uses wp_nav_menu in five places.
+ */
+function twentytwenty_menus() {
+
+	$locations = array(
+		'primary'  =&gt; __( 'Desktop Horizontal Menu', 'twentytwenty' ),
+		'expanded' =&gt; __( 'Desktop Expanded Menu', 'twentytwenty' ),
+		'mobile'   =&gt; __( 'Mobile Menu', 'twentytwenty' ),
+		'footer'   =&gt; __( 'Footer Menu', 'twentytwenty' ),
+		'social'   =&gt; __( 'Social Menu', 'twentytwenty' ),
+	);
+
+	register_nav_menus( $locations );
+}
+
+add_action( 'init', 'twentytwenty_menus' );
+
+/**
+ * Get the information about the logo.
+ *
+ * @param string $html The HTML output from get_custom_logo (core function).
+ *
+ * @return string $html
+ */
+function twentytwenty_get_custom_logo( $html ) {
+
+	$logo_id = get_theme_mod( 'custom_logo' );
+
+	if ( ! $logo_id ) {
+		return $html;
+	}
+
+	$logo = wp_get_attachment_image_src( $logo_id, 'full' );
+
+	if ( $logo ) {
+		// For clarity.
+		$logo_width  = esc_attr( $logo[1] );
+		$logo_height = esc_attr( $logo[2] );
+
+		// If the retina logo setting is active, reduce the width/height by half.
+		if ( get_theme_mod( 'retina_logo', false ) ) {
+			$logo_width  = floor( $logo_width / 2 );
+			$logo_height = floor( $logo_height / 2 );
+
+			$search = array(
+				'/width=\"\d+\"/iU',
+				'/height=\"\d+\"/iU',
+			);
+
+			$replace = array(
+				"width=\"{$logo_width}\"",
+				"height=\"{$logo_height}\"",
+			);
+
+			// Add a style attribute with the height, or append the height to the style attribute if the style attribute already exists.
+			if ( strpos( $html, ' style=' ) === false ) {
+				$search[]  = '/(src=)/';
+				$replace[] = "style=\"height: {$logo_height}px;\" src=";
+			} else {
+				$search[]  = '/(style="[^"]*)/';
+				$replace[] = "$1 height: {$logo_height}px;";
+			}
+
+			$html = preg_replace( $search, $replace, $html );
+
+		}
+	}
+
+	return $html;
+
+}
+
+add_filter( 'get_custom_logo', 'twentytwenty_get_custom_logo' );
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	/**
+	 * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
+/**
+ * Include a skip to content link at the top of the page so that users can bypass the menu.
+ */
+function twentytwenty_skip_link() {
+	echo '&lt;a class="skip-link screen-reader-text" href="#site-content"&gt;' . __( 'Skip to the content', 'twentytwenty' ) . '&lt;/a&gt;';
+}
+
+add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
+
+/**
+ * Register widget areas.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function twentytwenty_sidebar_registration() {
+
+	// Arguments used in all register_sidebar() calls.
+	$shared_args = array(
+		'before_title'  =&gt; '&lt;h2 class="widget-title subheading heading-size-3"&gt;',
+		'after_title'   =&gt; '&lt;/h2&gt;',
+		'before_widget' =&gt; '&lt;div class="widget %2$s"&gt;&lt;div class="widget-content"&gt;',
+		'after_widget'  =&gt; '&lt;/div&gt;&lt;/div&gt;',
+	);
+
+	// Footer #1.
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        =&gt; __( 'Footer #1', 'twentytwenty' ),
+				'id'          =&gt; 'sidebar-1',
+				'description' =&gt; __( 'Widgets in this area will be displayed in the first column in the footer.', 'twentytwenty' ),
+			)
+		)
+	);
+
+	// Footer #2.
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        =&gt; __( 'Footer #2', 'twentytwenty' ),
+				'id'          =&gt; 'sidebar-2',
+				'description' =&gt; __( 'Widgets in this area will be displayed in the second column in the footer.', 'twentytwenty' ),
+			)
+		)
+	);
+
+}
+
+add_action( 'widgets_init', 'twentytwenty_sidebar_registration' );
+
+/**
+ * Enqueue supplemental block editor styles.
+ */
+function twentytwenty_block_editor_styles() {
+
+	// Enqueue the editor styles.
+	wp_enqueue_style( 'twentytwenty-block-editor-styles', get_theme_file_uri( '/assets/css/editor-style-block.css' ), array(), wp_get_theme()-&gt;get( 'Version' ), 'all' );
+	wp_style_add_data( 'twentytwenty-block-editor-styles', 'rtl', 'replace' );
+
+	// Add inline style from the Customizer.
+	wp_add_inline_style( 'twentytwenty-block-editor-styles', twentytwenty_get_customizer_css( 'block-editor' ) );
+
+	// Add inline style for non-latin fonts.
+	wp_add_inline_style( 'twentytwenty-block-editor-styles', TwentyTwenty_Non_Latin_Languages::get_non_latin_css( 'block-editor' ) );
+
+	// Enqueue the editor script.
+	wp_enqueue_script( 'twentytwenty-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), wp_get_theme()-&gt;get( 'Version' ), true );
+}
+
+add_action( 'enqueue_block_editor_assets', 'twentytwenty_block_editor_styles', 1, 1 );
+
+/**
+ * Enqueue classic editor styles.
+ */
+function twentytwenty_classic_editor_styles() {
+
+	$classic_editor_styles = array(
+		'/assets/css/editor-style-classic.css',
+	);
+
+	add_editor_style( $classic_editor_styles );
+
+}
+
+add_action( 'init', 'twentytwenty_classic_editor_styles' );
+
+/**
+ * Output Customizer settings in the classic editor.
+ * Adds styles to the head of the TinyMCE iframe. Kudos to @Otto42 for the original solution.
+ *
+ * @param array $mce_init TinyMCE styles.
+ *
+ * @return array $mce_init TinyMCE styles.
+ */
+function twentytwenty_add_classic_editor_customizer_styles( $mce_init ) {
+
+	$styles = twentytwenty_get_customizer_css( 'classic-editor' );
+
+	if ( ! isset( $mce_init['content_style'] ) ) {
+		$mce_init['content_style'] = $styles . ' ';
+	} else {
+		$mce_init['content_style'] .= ' ' . $styles . ' ';
+	}
+
+	return $mce_init;
+
+}
+
+add_filter( 'tiny_mce_before_init', 'twentytwenty_add_classic_editor_customizer_styles' );
+
+/**
+ * Output non-latin font styles in the classic editor.
+ * Adds styles to the head of the TinyMCE iframe. Kudos to @Otto42 for the original solution.
+ *
+ * @param array $mce_init TinyMCE styles.
+ *
+ * @return array $mce_init TinyMCE styles.
+ */
+function twentytwenty_add_classic_editor_non_latin_styles( $mce_init ) {
+
+	$styles = TwentyTwenty_Non_Latin_Languages::get_non_latin_css( 'classic-editor' );
+
+	// Return if there are no styles to add.
+	if ( ! $styles ) {
+		return $mce_init;
+	}
+
+	if ( ! isset( $mce_init['content_style'] ) ) {
+		$mce_init['content_style'] = $styles . ' ';
+	} else {
+		$mce_init['content_style'] .= ' ' . $styles . ' ';
+	}
+
+	return $mce_init;
+
+}
+
+add_filter( 'tiny_mce_before_init', 'twentytwenty_add_classic_editor_non_latin_styles' );
+
+/**
+ * Block Editor Settings.
+ * Add custom colors and font sizes to the block editor.
+ */
+function twentytwenty_block_editor_settings() {
+
+	// Block Editor Palette.
+	$editor_color_palette = array(
+		array(
+			'name'  =&gt; __( 'Accent Color', 'twentytwenty' ),
+			'slug'  =&gt; 'accent',
+			'color' =&gt; twentytwenty_get_color_for_area( 'content', 'accent' ),
+		),
+		array(
+			'name'  =&gt; __( 'Primary', 'twentytwenty' ),
+			'slug'  =&gt; 'primary',
+			'color' =&gt; twentytwenty_get_color_for_area( 'content', 'text' ),
+		),
+		array(
+			'name'  =&gt; __( 'Secondary', 'twentytwenty' ),
+			'slug'  =&gt; 'secondary',
+			'color' =&gt; twentytwenty_get_color_for_area( 'content', 'secondary' ),
+		),
+		array(
+			'name'  =&gt; __( 'Subtle Background', 'twentytwenty' ),
+			'slug'  =&gt; 'subtle-background',
+			'color' =&gt; twentytwenty_get_color_for_area( 'content', 'borders' ),
+		),
+	);
+
+	// Add the background option.
+	$background_color = get_theme_mod( 'background_color' );
+	if ( ! $background_color ) {
+		$background_color_arr = get_theme_support( 'custom-background' );
+		$background_color     = $background_color_arr[0]['default-color'];
+	}
+	$editor_color_palette[] = array(
+		'name'  =&gt; __( 'Background Color', 'twentytwenty' ),
+		'slug'  =&gt; 'background',
+		'color' =&gt; '#' . $background_color,
+	);
+
+	// If we have accent colors, add them to the block editor palette.
+	if ( $editor_color_palette ) {
+		add_theme_support( 'editor-color-palette', $editor_color_palette );
+	}
+
+	// Block Editor Font Sizes.
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name'      =&gt; _x( 'Small', 'Name of the small font size in the block editor', 'twentytwenty' ),
+				'shortName' =&gt; _x( 'S', 'Short name of the small font size in the block editor.', 'twentytwenty' ),
+				'size'      =&gt; 18,
+				'slug'      =&gt; 'small',
+			),
+			array(
+				'name'      =&gt; _x( 'Regular', 'Name of the regular font size in the block editor', 'twentytwenty' ),
+				'shortName' =&gt; _x( 'M', 'Short name of the regular font size in the block editor.', 'twentytwenty' ),
+				'size'      =&gt; 21,
+				'slug'      =&gt; 'normal',
+			),
+			array(
+				'name'      =&gt; _x( 'Large', 'Name of the large font size in the block editor', 'twentytwenty' ),
+				'shortName' =&gt; _x( 'L', 'Short name of the large font size in the block editor.', 'twentytwenty' ),
+				'size'      =&gt; 26.25,
+				'slug'      =&gt; 'large',
+			),
+			array(
+				'name'      =&gt; _x( 'Larger', 'Name of the larger font size in the block editor', 'twentytwenty' ),
+				'shortName' =&gt; _x( 'XL', 'Short name of the larger font size in the block editor.', 'twentytwenty' ),
+				'size'      =&gt; 32,
+				'slug'      =&gt; 'larger',
+			),
+		)
+	);
+
+	add_theme_support( 'editor-styles' );
+
+	// If we have a dark background color then add support for dark editor style.
+	// We can determine if the background color is dark by checking if the text-color is white.
+	if ( '#ffffff' === strtolower( twentytwenty_get_color_for_area( 'content', 'text' ) ) ) {
+		add_theme_support( 'dark-editor-style' );
+	}
+
+}
+
+add_action( 'after_setup_theme', 'twentytwenty_block_editor_settings' );
+
+/**
+ * Overwrite default more tag with styling and screen reader markup.
+ *
+ * @param string $html The default output HTML for the more tag.
+ *
+ * @return string $html
+ */
+function twentytwenty_read_more_tag( $html ) {
+	return preg_replace( '/&lt;a(.*)&gt;(.*)&lt;\/a&gt;/iU', sprintf( '&lt;div class="read-more-button-wrap"&gt;&lt;a$1&gt;&lt;span class="faux-button"&gt;$2&lt;/span&gt; &lt;span class="screen-reader-text"&gt;"%1$s"&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;', get_the_title( get_the_ID() ) ), $html );
+}
+
+add_filter( 'the_content_more_link', 'twentytwenty_read_more_tag' );
+
+/**
+ * Enqueues scripts for customizer controls &amp; settings.
+ *
+ * @since Twenty Twenty 1.0
+ *
+ * @return void
+ */
+function twentytwenty_customize_controls_enqueue_scripts() {
+	$theme_version = wp_get_theme()-&gt;get( 'Version' );
+
+	// Add main customizer js file.
+	wp_enqueue_script( 'twentytwenty-customize', get_template_directory_uri() . '/assets/js/customize.js', array( 'jquery' ), $theme_version, false );
+
+	// Add script for color calculations.
+	wp_enqueue_script( 'twentytwenty-color-calculations', get_template_directory_uri() . '/assets/js/color-calculations.js', array( 'wp-color-picker' ), $theme_version, false );
+
+	// Add script for controls.
+	wp_enqueue_script( 'twentytwenty-customize-controls', get_template_directory_uri() . '/assets/js/customize-controls.js', array( 'twentytwenty-color-calculations', 'customize-controls', 'underscore', 'jquery' ), $theme_version, false );
+	wp_localize_script( 'twentytwenty-customize-controls', 'twentyTwentyBgColors', twentytwenty_get_customizer_color_vars() );
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_controls_enqueue_scripts' );
+
+/**
+ * Enqueue scripts for the customizer preview.
+ *
+ * @since Twenty Twenty 1.0
+ *
+ * @return void
+ */
+function twentytwenty_customize_preview_init() {
+	$theme_version = wp_get_theme()-&gt;get( 'Version' );
+
+	wp_enqueue_script( 'twentytwenty-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview', 'customize-selective-refresh', 'jquery' ), $theme_version, true );
+	wp_localize_script( 'twentytwenty-customize-preview', 'twentyTwentyBgColors', twentytwenty_get_customizer_color_vars() );
+	wp_localize_script( 'twentytwenty-customize-preview', 'twentyTwentyPreviewEls', twentytwenty_get_elements_array() );
+
+	wp_add_inline_script(
+		'twentytwenty-customize-preview',
+		sprintf(
+			'wp.customize.selectiveRefresh.partialConstructor[ %1$s ].prototype.attrs = %2$s;',
+			wp_json_encode( 'cover_opacity' ),
+			wp_json_encode( twentytwenty_customize_opacity_range() )
+		)
+	);
+}
+
+add_action( 'customize_preview_init', 'twentytwenty_customize_preview_init' );
+
+/**
+ * Get accessible color for an area.
+ *
+ * @since Twenty Twenty 1.0
+ *
+ * @param string $area The area we want to get the colors for.
+ * @param string $context Can be 'text' or 'accent'.
+ * @return string Returns a HEX color.
+ */
+function twentytwenty_get_color_for_area( $area = 'content', $context = 'text' ) {
+
+	// Get the value from the theme-mod.
+	$settings = get_theme_mod(
+		'accent_accessible_colors',
+		array(
+			'content'       =&gt; array(
+				'text'      =&gt; '#000000',
+				'accent'    =&gt; '#cd2653',
+				'secondary' =&gt; '#6d6d6d',
+				'borders'   =&gt; '#dcd7ca',
+			),
+			'header-footer' =&gt; array(
+				'text'      =&gt; '#000000',
+				'accent'    =&gt; '#cd2653',
+				'secondary' =&gt; '#6d6d6d',
+				'borders'   =&gt; '#dcd7ca',
+			),
+		)
+	);
+
+	// If we have a value return it.
+	if ( isset( $settings[ $area ] ) &amp;&amp; isset( $settings[ $area ][ $context ] ) ) {
+		return $settings[ $area ][ $context ];
+	}
+
+	// Return false if the option doesn't exist.
+	return false;
+}
+
+/**
+ * Returns an array of variables for the customizer preview.
+ *
+ * @since Twenty Twenty 1.0
+ *
+ * @return array
+ */
+function twentytwenty_get_customizer_color_vars() {
+	$colors = array(
+		'content'       =&gt; array(
+			'setting' =&gt; 'background_color',
+		),
+		'header-footer' =&gt; array(
+			'setting' =&gt; 'header_footer_background_color',
+		),
+	);
+	return $colors;
+}
+
+/**
+ * Get an array of elements.
+ *
+ * @since Twenty Twenty 1.0
+ *
+ * @return array
+ */
+function twentytwenty_get_elements_array() {
+
+	// The array is formatted like this:
+	// [key-in-saved-setting][sub-key-in-setting][css-property] = [elements].
+	$elements = array(
+		'content'       =&gt; array(
+			'accent'     =&gt; array(
+				'color'            =&gt; array( '.color-accent', '.color-accent-hover:hover', '.color-accent-hover:focus', ':root .has-accent-color', '.has-drop-cap:not(:focus):first-letter', '.wp-block-button.is-style-outline', 'a' ),
+				'border-color'     =&gt; array( 'blockquote', '.border-color-accent', '.border-color-accent-hover:hover', '.border-color-accent-hover:focus' ),
+				'background-color' =&gt; array( 'button', '.button', '.faux-button', '.wp-block-button__link', '.wp-block-file .wp-block-file__button', 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', '.bg-accent', '.bg-accent-hover:hover', '.bg-accent-hover:focus', ':root .has-accent-background-color', '.comment-reply-link' ),
+				'fill'             =&gt; array( '.fill-children-accent', '.fill-children-accent *' ),
+			),
+			'background' =&gt; array(
+				'color'            =&gt; array( ':root .has-background-color', 'button', '.button', '.faux-button', '.wp-block-button__link', '.wp-block-file__button', 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', '.wp-block-button', '.comment-reply-link', '.has-background.has-primary-background-color:not(.has-text-color)', '.has-background.has-primary-background-color *:not(.has-text-color)', '.has-background.has-accent-background-color:not(.has-text-color)', '.has-background.has-accent-background-color *:not(.has-text-color)' ),
+				'background-color' =&gt; array( ':root .has-background-background-color' ),
+			),
+			'text'       =&gt; array(
+				'color'            =&gt; array( 'body', '.entry-title a', ':root .has-primary-color' ),
+				'background-color' =&gt; array( ':root .has-primary-background-color' ),
+			),
+			'secondary'  =&gt; array(
+				'color'            =&gt; array( 'cite', 'figcaption', '.wp-caption-text', '.post-meta', '.entry-content .wp-block-archives li', '.entry-content .wp-block-categories li', '.entry-content .wp-block-latest-posts li', '.wp-block-latest-comments__comment-date', '.wp-block-latest-posts__post-date', '.wp-block-embed figcaption', '.wp-block-image figcaption', '.wp-block-pullquote cite', '.comment-metadata', '.comment-respond .comment-notes', '.comment-respond .logged-in-as', '.pagination .dots', '.entry-content hr:not(.has-background)', 'hr.styled-separator', ':root .has-secondary-color' ),
+				'background-color' =&gt; array( ':root .has-secondary-background-color' ),
+			),
+			'borders'    =&gt; array(
+				'border-color'        =&gt; array( 'pre', 'fieldset', 'input', 'textarea', 'table', 'table *', 'hr' ),
+				'background-color'    =&gt; array( 'caption', 'code', 'code', 'kbd', 'samp', '.wp-block-table.is-style-stripes tbody tr:nth-child(odd)', ':root .has-subtle-background-background-color' ),
+				'border-bottom-color' =&gt; array( '.wp-block-table.is-style-stripes' ),
+				'border-top-color'    =&gt; array( '.wp-block-latest-posts.is-grid li' ),
+				'color'               =&gt; array( ':root .has-subtle-background-color' ),
+			),
+		),
+		'header-footer' =&gt; array(
+			'accent'     =&gt; array(
+				'color'            =&gt; array( 'body:not(.overlay-header) .primary-menu &gt; li &gt; a', 'body:not(.overlay-header) .primary-menu &gt; li &gt; .icon', '.modal-menu a', '.footer-menu a, .footer-widgets a', '#site-footer .wp-block-button.is-style-outline', '.wp-block-pullquote:before', '.singular:not(.overlay-header) .entry-header a', '.archive-header a', '.header-footer-group .color-accent', '.header-footer-group .color-accent-hover:hover' ),
+				'background-color' =&gt; array( '.social-icons a', '#site-footer button:not(.toggle)', '#site-footer .button', '#site-footer .faux-button', '#site-footer .wp-block-button__link', '#site-footer .wp-block-file__button', '#site-footer input[type="button"]', '#site-footer input[type="reset"]', '#site-footer input[type="submit"]' ),
+			),
+			'background' =&gt; array(
+				'color'            =&gt; array( '.social-icons a', 'body:not(.overlay-header) .primary-menu ul', '.header-footer-group button', '.header-footer-group .button', '.header-footer-group .faux-button', '.header-footer-group .wp-block-button:not(.is-style-outline) .wp-block-button__link', '.header-footer-group .wp-block-file__button', '.header-footer-group input[type="button"]', '.header-footer-group input[type="reset"]', '.header-footer-group input[type="submit"]' ),
+				'background-color' =&gt; array( '#site-header', '.footer-nav-widgets-wrapper', '#site-footer', '.menu-modal', '.menu-modal-inner', '.search-modal-inner', '.archive-header', '.singular .entry-header', '.singular .featured-media:before', '.wp-block-pullquote:before' ),
+			),
+			'text'       =&gt; array(
+				'color'               =&gt; array( '.header-footer-group', 'body:not(.overlay-header) #site-header .toggle', '.menu-modal .toggle' ),
+				'background-color'    =&gt; array( 'body:not(.overlay-header) .primary-menu ul' ),
+				'border-bottom-color' =&gt; array( 'body:not(.overlay-header) .primary-menu &gt; li &gt; ul:after' ),
+				'border-left-color'   =&gt; array( 'body:not(.overlay-header) .primary-menu ul ul:after' ),
+			),
+			'secondary'  =&gt; array(
+				'color' =&gt; array( '.site-description', 'body:not(.overlay-header) .toggle-inner .toggle-text', '.widget .post-date', '.widget .rss-date', '.widget_archive li', '.widget_categories li', '.widget cite', '.widget_pages li', '.widget_meta li', '.widget_nav_menu li', '.powered-by-wordpress', '.to-the-top', '.singular .entry-header .post-meta', '.singular:not(.overlay-header) .entry-header .post-meta a' ),
+			),
+			'borders'    =&gt; array(
+				'border-color'     =&gt; array( '.header-footer-group pre', '.header-footer-group fieldset', '.header-footer-group input', '.header-footer-group textarea', '.header-footer-group table', '.header-footer-group table *', '.footer-nav-widgets-wrapper', '#site-footer', '.menu-modal nav *', '.footer-widgets-outer-wrapper', '.footer-top' ),
+				'background-color' =&gt; array( '.header-footer-group table caption', 'body:not(.overlay-header) .header-inner .toggle-wrapper::before' ),
+			),
+		),
+	);
+
+	/**
+	* Filters Twenty Twenty theme elements
+	*
+	* @since Twenty Twenty 1.0
+	*
+	* @param array Array of elements
+	*/
+	return apply_filters( 'twentytwenty_get_elements_array', $elements );
+}
+
+
+
+// ====Login With Ionic=====
+function register_api_hooks() {
+
+    register_rest_route(
+
+     'custom-plugin', 
+     '/login/',
+      array(
+        'methods'  =&gt; 'GET',
+        'callback' =&gt; 'login',
+        )
+	);
+
+	register_rest_route(
+
+		'custom-plugin', 
+		'/login_google/',
+		 array(
+		   'methods'  =&gt; 'GET',
+		   'callback' =&gt; 'login_google',
+		   )
+	   );
+	register_rest_route(
+        'custom-plugin', 
+        '/register/',
+        array(
+        'methods'  =&gt; 'POST',
+        'callback' =&gt; 'register')
+	); 
+	register_rest_route(
+        'custom-plugin', 
+        '/favpost/',
+        array(
+        'methods'  =&gt; 'POST',
+        'callback' =&gt; 'favpost')
+	); 
+	register_rest_route(
+        'custom-plugin', 
+        '/google_check/',
+        array(
+        'methods'  =&gt; 'POST',
+        'callback' =&gt; 'google_check')
+	); 
+	register_rest_route(
+        'custom-plugin', 
+        '/google_user_insert/',
+        array(
+        'methods'  =&gt; 'POST',
+		'callback'  =&gt; 'google_user_insert')
+		);	
+
+	register_rest_route(
+		'custom-plugin', 
+		'/category_sub_unsub/',
+		array(
+		'methods'  =&gt; 'POST',
+		'callback'  =&gt; 'category_sub_unsub')
+		);
+		
+	register_rest_route(
+		'custom-plugin', 
+		'/get_categoriesjj/',
+		array(
+		'methods'  =&gt; 'GET',
+		'callback'  =&gt; 'get_categoriesjj')
+		);
+
+	register_rest_route(
+		'custom-plugin', 
+		'/add_user_categories/',
+		array(
+		'methods'  =&gt; 'GET',
+		'callback'  =&gt; 'add_user_categories')
+		);
+}
+
+
+add_action( 'rest_api_init', 'register_api_hooks' );
+
+function login($request){
+    $creds['user_login'] = $request["username"];
+    $creds['user_password'] =  $request["password"];
+	
+    //  $creds['remember'] = true;
+	$user = wp_signon($creds,false);
+	    if ( is_wp_error($user) )
+            echo $user-&gt;get_error_message();
+    return $user;
+    
+}
+
+
+function login_google($request){
+	// echo $_GET['username'];
+	// echo $_GET['password'];
+	// exit();
+
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn-&gt;connect_error) {
+        die("Connection failed: " . $conn-&gt;connect_error);
+    }
+
+	$email = $_GET['user_email'];
+	$password = $_GET['password'];
+	$sql = "SELECT * FROM wp_users WHERE user_email = '".$email."'";
+    $result = mysqli_query($conn, $sql);
+    $json_array = array();
+	while($row = mysqli_fetch_assoc($result)) {            
+		$json_array[] = $row;
+	}
+	if(!empty($json_array)){
+		return json_encode($json_array);
+	}else{
+		return false;
+	}
+
+}
+
+function register($request){
+
+
+	$user_login = $_POST['user_login'];
+    $user_pass = $_POST['user_pass'];
+    $user_email = $_POST['user_email'];
+    $user_registered = $_POST['user_registered'];
+    $user_registered1 = date("Y-m-d h:i:s",$user_registered);
+    $user_pass1 = wp_hash_password($user_pass);
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn-&gt;connect_error) {
+        die("Connection failed: " . $conn-&gt;connect_error);
+    }
+
+        $qy= "INSERT INTO wp_users(user_login,user_pass,user_email,user_registered) 
+		VALUES ('$user_login','$user_pass1','$user_email','$user_registered1')";
+
+          if (mysqli_query($conn, $qy)) {
+       		 echo "New record created successfully";
+  		  } else {
+        	echo "Error: " . $qy . "&lt;br&gt;" . mysqli_error($conn);
+    	}
+}
+
+function favpost($request){
+	$post_id = $_POST['post_id'];
+	// var_dump($user_login);
+    $user_id = $_POST['user_id'];
+    $fav_status = $_POST['fav_status'];
+    
+
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn-&gt;connect_error) {
+        die("Connection failed: " . $conn-&gt;connect_error);
+    }
+
+        $qy= "INSERT INTO wp_fevpost(post_id,user_id,fav_status) 
+		VALUES ('".$post_id."','".$user_id."','".$fav_status."')";
+
+        if ($conn-&gt;query($qy) === TRUE) {
+            echo "data successfullu insert";
+        } 
+        else {
+            echo "Error: " . $qy . "&lt;br&gt;" . $conn-&gt;error;
+        }
+}
+
+function google_check($request){
+	$email = $_POST['email'];
+
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn-&gt;connect_error) {
+        die("Connection failed: " . $conn-&gt;connect_error);
+    }
+
+	$sql = "SELECT * FROM wp_users WHERE user_email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    $json_array = array();
+    // if (mysqli_num_rows($result) &gt; 0) {
+        while($row = mysqli_fetch_assoc($result)) {            
+			$json_array['error'] = 'success';
+			$json_array[] = $row;
+		}
+		if(!empty($json_array)){
+			echo json_encode($json_array,true);
+		}else{
+			echo json_encode(array('error'=&gt;'empty'));
+		}
+		
+		exit;
+
+}
+
+function google_user_insert(){
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn-&gt;connect_error) {
+        die("Connection failed: " . $conn-&gt;connect_error);
+	}
+	
+	$user_login  = $_POST['user_login'];
+	$user_email  = $_POST['user_email'];
+
+	$qy= "INSERT INTO wp_users(user_login,user_email) 
+	VALUES ('".$user_login."','".$user_email."')";
+
+	if ($conn-&gt;query($qy) === TRUE) {
+		return true;
+	} 
+	else {
+		return false;
+	}
+	exit();
+}
+
+function category_sub_unsub(){
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn-&gt;connect_error) {
+        die("Connection failed: " . $conn-&gt;connect_error);
+	}
+	
+	$user_id  = $_POST['user_id'];
+	$cat_id  = $_POST['cat_id'];
+	if($_POST['is_subscribe'] == 1 &amp;&amp; $_POST['is_subscribe'] != ''){
+		$is_subscribe  = 0;
+	}else{
+		$is_subscribe  = 1;
+	}
+
+	$qy= "UPDATE wp_users_subscribers SET is_subscribe=$is_subscribe WHERE user_id=$user_id AND cat_id=$cat_id";
+
+	if ($conn-&gt;query($qy) === TRUE) {
+		return true;
+	} 
+	else {
+		return false;
+	}
+	exit();
+}
+
+function get_categoriesjj(){
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	$taxonomy = 'posts';
+	$categories = get_terms(array( 'hide_empty' =&gt; false)); //
+	$user_id = $_GET['user_id'];
+	foreach ( $categories as $key =&gt; $category ) {
+		
+		
+
+		$sql = "SELECT * FROM wp_users_subscribers WHERE cat_id = $category-&gt;term_id AND user_id = $user_id";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		// print_r($row);
+		$categories[$key]-&gt;is_subscribe =  $row['is_subscribe'];
+	}
+	echo json_encode($categories);
+	exit();
+}
+
+function add_user_categories(){
+	$servername = "localhost";
+    $username = "root";
+    $password = "Raoinfotech@09";
+	$dbname = "btp-test";
+	
+	$user_id = $_GET['user_id'];
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	$categories = get_terms(array( 'hide_empty' =&gt; false)); //
+	foreach ( $categories as $key =&gt; $category ) {
+		$sql = "SELECT * FROM wp_users_subscribers WHERE user_id = $user_id AND cat_id = $category-&gt;term_id";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_row($result);
+		
+		if(empty($row)){
+
+			$qy= "INSERT INTO wp_users_subscribers(user_id,cat_id,is_subscribe) 
+			VALUES ($user_id,$category-&gt;term_id,1)";
+
+			$conn-&gt;query($qy);
+		}
+	}
+}
+header("Access-Control-Allow-Origin: *");
+
+
+</textarea><div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-focused"><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 19931px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div class="CodeMirror-sizer" style="margin-left: 39px; margin-bottom: -17px; border-right-width: 13px; min-height: 19931px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 18374.4px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"></div><div class="CodeMirror-code" role="textbox" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" tabindex="0" aria-multiline="true" aria-labelledby="theme-plugin-editor-label" aria-describedby="editor-keyboard-trap-help-1 editor-keyboard-trap-help-2 editor-keyboard-trap-help-3 editor-keyboard-trap-help-4" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1008</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">exit</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1009</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1010</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1011</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">category_sub_unsub</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1012</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$servername</span> <span class="cm-operator">=</span> <span class="cm-string">"localhost"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1013</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">$username</span> <span class="cm-operator">=</span> <span class="cm-string">"root"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1014</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">$password</span> <span class="cm-operator">=</span> <span class="cm-string">"Raoinfotech@09"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1015</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$dbname</span> <span class="cm-operator">=</span> <span class="cm-string">"btp-test"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1016</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1017</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1018</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">$conn</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">mysqli</span>(<span class="cm-variable-2">$servername</span>, <span class="cm-variable-2">$username</span>, <span class="cm-variable-2">$password</span>, <span class="cm-variable-2">$dbname</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1019</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1020</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">$conn</span><span class="cm-operator">-&gt;</span><span class="cm-variable">connect_error</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1021</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">die</span>(<span class="cm-string">"Connection failed: "</span> . <span class="cm-variable-2">$conn</span><span class="cm-operator">-&gt;</span><span class="cm-variable">connect_error</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1022</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1023</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1024</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$user_id</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable-2">$_POST</span>[<span class="cm-string">'user_id'</span>];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1025</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$cat_id</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable-2">$_POST</span>[<span class="cm-string">'cat_id'</span>];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1026</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span>(<span class="cm-variable-2">$_POST</span>[<span class="cm-string">'is_subscribe'</span>] <span class="cm-operator">==</span> <span class="cm-number">1</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">$_POST</span>[<span class="cm-string">'is_subscribe'</span>] <span class="cm-operator">!=</span> <span class="cm-string">''</span>){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1027</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$is_subscribe</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1028</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}<span class="cm-keyword">else</span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1029</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$is_subscribe</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-number">1</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1030</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1031</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1032</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$qy</span><span class="cm-operator">=</span> <span class="cm-string">"UPDATE wp_users_subscribers SET is_subscribe=</span><span class="cm-variable-2">$is_subscribe</span> <span class="cm-string">WHERE user_id=</span><span class="cm-variable-2">$user_id</span> <span class="cm-string">AND cat_id=</span><span class="cm-variable-2">$cat_id</span><span class="cm-string">"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1033</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1034</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> (<span class="cm-builtin">mysqli_query</span>(<span class="cm-variable-2">$conn</span>, <span class="cm-variable-2">$qy</span>)) {</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1035</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">return</span> <span class="cm-atom">true</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1036</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>} <span class="cm-keyword">else</span> {</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1037</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">return</span> <span class="cm-atom">false</span>;</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1038</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1039</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">exit</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1040</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1041</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1042</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">get_categoriesjj</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1043</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$servername</span> <span class="cm-operator">=</span> <span class="cm-string">"localhost"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1044</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">$username</span> <span class="cm-operator">=</span> <span class="cm-string">"root"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1045</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">$password</span> <span class="cm-operator">=</span> <span class="cm-string">"Raoinfotech@09"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1046</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$dbname</span> <span class="cm-operator">=</span> <span class="cm-string">"btp-test"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1047</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1048</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1049</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$conn</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">mysqli</span>(<span class="cm-variable-2">$servername</span>, <span class="cm-variable-2">$username</span>, <span class="cm-variable-2">$password</span>, <span class="cm-variable-2">$dbname</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1050</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1051</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$categories</span> <span class="cm-operator">=</span> <span class="cm-variable">get_terms</span>(<span class="cm-keyword">array</span>( <span class="cm-string">'hide_empty'</span> <span class="cm-operator">=&gt;</span> <span class="cm-atom">false</span>)); <span class="cm-comment">//</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1052</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$user_id</span> <span class="cm-operator">=</span> <span class="cm-variable-2">$_GET</span>[<span class="cm-string">'user_id'</span>];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1053</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">foreach</span> ( <span class="cm-variable-2">$categories</span> <span class="cm-keyword">as</span> <span class="cm-variable-2">$key</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">$category</span> ) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1054</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1055</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1056</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 30px;">1057</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">$sql</span> <span class="cm-operator">=</span> <span class="cm-string">"SELECT * FROM wp_users_subscribers WHERE cat_id = </span><span class="cm-variable-2">$category</span>-&gt;<span class="cm-variable">term_id</span> <span class="cm-string">AND user_id = </span><span class="cm-variable-2">$user_id</span><span class="cm-string">"</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 19931px;"></div><div class="CodeMirror-gutters" style="height: 19944px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 38px;"></div></div></div></div>
+			<input type="hidden" name="action" value="update">
+			<input type="hidden" name="file" value="functions.php">
+			<input type="hidden" name="theme" value="twentytwenty">
+		</div>
+
+					<div id="documentation" class="hide-if-no-js">
+				<label for="docs-list">Documentation:</label>
+				<select name="docs-list" id="docs-list"><option value="">Function Name…</option><option value="TwentyTwenty_Script_Loader">TwentyTwenty_Script_Loader()</option><option value="__">__()</option><option value="_x">_x()</option><option value="add_action">add_action()</option><option value="add_editor_style">add_editor_style()</option><option value="add_filter">add_filter()</option><option value="add_image_size">add_image_size()</option><option value="add_theme_support">add_theme_support()</option><option value="apply_filters">apply_filters()</option><option value="array_merge">array_merge()</option><option value="comments_open">comments_open()</option><option value="date">date()</option><option value="do_action">do_action()</option><option value="esc_attr">esc_attr()</option><option value="floor">floor()</option><option value="function_exists">function_exists()</option><option value="get_non_latin_css">get_non_latin_css()</option><option value="get_option">get_option()</option><option value="get_stylesheet_uri">get_stylesheet_uri()</option><option value="get_template_directory">get_template_directory()</option><option value="get_template_directory_uri">get_template_directory_uri()</option><option value="get_terms">get_terms()</option><option value="get_the_ID">get_the_ID()</option><option value="get_the_title">get_the_title()</option><option value="get_theme_file_uri">get_theme_file_uri()</option><option value="get_theme_mod">get_theme_mod()</option><option value="get_theme_support">get_theme_support()</option><option value="header">header()</option><option value="is_admin">is_admin()</option><option value="is_customize_preview">is_customize_preview()</option><option value="is_singular">is_singular()</option><option value="is_wp_error">is_wp_error()</option><option value="json_encode">json_encode()</option><option value="load_theme_textdomain">load_theme_textdomain()</option><option value="mysqli">mysqli()</option><option value="mysqli_error">mysqli_error()</option><option value="mysqli_fetch_assoc">mysqli_fetch_assoc()</option><option value="mysqli_fetch_row">mysqli_fetch_row()</option><option value="mysqli_query">mysqli_query()</option><option value="preg_replace">preg_replace()</option><option value="register_nav_menus">register_nav_menus()</option><option value="register_rest_route">register_rest_route()</option><option value="register_sidebar">register_sidebar()</option><option value="set_post_thumbnail_size">set_post_thumbnail_size()</option><option value="sprintf">sprintf()</option><option value="strpos">strpos()</option><option value="strtolower">strtolower()</option><option value="twentytwenty_customize_opacity_range">twentytwenty_customize_opacity_range()</option><option value="twentytwenty_get_customizer_css">twentytwenty_get_customizer_css()</option><option value="twentytwenty_get_starter_content">twentytwenty_get_starter_content()</option><option value="wp_add_inline_script">wp_add_inline_script()</option><option value="wp_add_inline_style">wp_add_inline_style()</option><option value="wp_enqueue_script">wp_enqueue_script()</option><option value="wp_enqueue_style">wp_enqueue_style()</option><option value="wp_get_attachment_image_src">wp_get_attachment_image_src()</option><option value="wp_get_theme">wp_get_theme()</option><option value="wp_hash_password">wp_hash_password()</option><option value="wp_json_encode">wp_json_encode()</option><option value="wp_localize_script">wp_localize_script()</option><option value="wp_script_add_data">wp_script_add_data()</option><option value="wp_signon">wp_signon()</option><option value="wp_style_add_data">wp_style_add_data()</option></select>				<input disabled="" id="docs-lookup" type="button" class="button" value="Look Up" onclick="if ( &#39;&#39; != jQuery(&#39;#docs-list&#39;).val() ) { window.open( &#39;https://api.wordpress.org/core/handbook/1.0/?function=&#39; + escape( jQuery( &#39;#docs-list&#39; ).val() ) + &#39;&amp;locale=en_US&amp;version=5.4.2&amp;redirect=true&#39;); }">
+			</div>
+		
+		<div>
+			<div class="editor-notices">
+							</div>
+							<p class="submit">
+					<input type="submit" name="submit" id="submit" class="button button-primary" value="Update File">					<span class="spinner"></span>
+				</p>
+					</div>
+
+			<script type="text/html" id="tmpl-wp-file-editor-notice">
+		<div class="notice inline notice-{{ data.type || 'info' }} {{ data.alt ? 'notice-alt' : '' }} {{ data.dismissible ? 'is-dismissible' : '' }} {{ data.classes || '' }}">
+			<# if ( 'php_error' === data.code ) { #>
+				<p>
+					Your PHP code changes were rolled back due to an error on line {{ data.line }} of file {{ data.file }}. Please fix and try saving again.				</p>
+				<pre>{{ data.message }}</pre>
+			<# } else if ( 'file_not_writable' === data.code ) { #>
+				<p>
+					You need to make this file writable before you can save your changes. See <a href="https://wordpress.org/support/article/changing-file-permissions/">Changing File Permissions</a> for more information.				</p>
+			<# } else { #>
+				<p>{{ data.message || data.code }}</p>
+
+				<# if ( 'lint_errors' === data.code ) { #>
+					<p>
+						<# var elementId = 'el-' + String( Math.random() ); #>
+						<input id="{{ elementId }}"  type="checkbox">
+						<label for="{{ elementId }}">Update anyway, even though it might break your site?</label>
+					</p>
+				<# } #>
+			<# } #>
+			<# if ( data.dismissible ) { #>
+				<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss</span></button>
+			<# } #>
+		</div>
+	</script>
+		</form>
+	<br class="clear">
+</div>
+
+<div class="clear"></div></div><!-- wpbody-content -->
+<div class="clear"></div></div><!-- wpbody -->
+<div class="clear"></div></div><!-- wpcontent -->
+
+<div id="wpfooter" role="contentinfo">
+		<p id="footer-left" class="alignleft">
+		<span id="footer-thankyou">Thank you for creating with <a href="https://wordpress.org/">WordPress</a>.</span>	</p>
+	<p id="footer-upgrade" class="alignright">
+		Version 5.4.2	</p>
+	<div class="clear"></div>
+</div>
+	<div id="wp-auth-check-wrap" class="hidden">
+	<div id="wp-auth-check-bg"></div>
+	<div id="wp-auth-check">
+	<button type="button" class="wp-auth-check-close button-link"><span class="screen-reader-text">Close dialog</span></button>
+			<div id="wp-auth-check-form" class="loading" data-src="https://btp-test.mylionsgroup.com/wp-login.php?interim-login=1&amp;wp_lang=en_US"></div>
+			<div class="wp-auth-fallback">
+		<p><b class="wp-auth-fallback-expired" tabindex="0">Session expired</b></p>
+		<p><a href="https://btp-test.mylionsgroup.com/wp-login.php" target="_blank">Please log in again.</a>
+		The login page will open in a new tab. After logging in you can close it and return to this page.</p>
+	</div>
+	</div>
+	</div>
+	
+<script>
+/* <![CDATA[ */
+var commonL10n = {"warnDelete":"You are about to permanently delete these items from your site.\nThis action cannot be undone.\n 'Cancel' to stop, 'OK' to delete.","dismiss":"Dismiss this notice.","collapseMenu":"Collapse Main menu","expandMenu":"Expand Main menu"};var heartbeatSettings = {"nonce":"84bc118588"};var authcheckL10n = {"beforeunload":"Your session has expired. You can log in again from this page or go to the login page.","interval":"180"};/* ]]> */
+</script>
+<script src="./Edit Themes ‹ Trivia Post — WordPress_files/load-scripts(1).php"></script>
+
+<div class="clear"></div></div><!-- wpwrap -->
+<script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+
+
+<div id="a11y-speak-polite" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true">File edited successfully.&nbsp;</div><div id="a11y-speak-assertive" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div></body><grammarly-extension class="_1KJtL"></grammarly-extension></html>

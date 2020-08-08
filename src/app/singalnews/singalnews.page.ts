@@ -89,5 +89,16 @@ export class SingalnewsPage implements OnInit {
 
   }
 
+  shareItem(post) {
+    //this code is to use the social sharing plugin
+    // message, subject, file, url
+    this.socialSharing.share("Check this item:  BTS://singalnews/" +post.link, post.title, post.img,)
+    .then(() => {
+
+    })
+    .catch(() => {
+
+    });
+  }
 
 }

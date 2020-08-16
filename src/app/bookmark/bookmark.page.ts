@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bookmark',
@@ -9,7 +10,7 @@ export class BookmarkPage implements OnInit {
   posts = [];
   
   unic_fav = [];
-  constructor() { }
+  constructor(private router : Router) { }
     
 
   ngOnInit() {
@@ -25,6 +26,13 @@ export class BookmarkPage implements OnInit {
 
   //   }
   // }
-
-
+  removeBookmark(post_id,i){
+    console.log("============>post_id",post_id)
+    this.posts.splice(i,1);
+    localStorage.removeItem('new.i');
+    localStorage.setItem('new', JSON.stringify(this.posts));
+  }
+  navigat(post_id){
+    this.router.navigate(['singalnews',post_id]);
+  }
 }

@@ -48,6 +48,7 @@ export class RegesterPage implements OnInit {
           })
           toast.present();
           console.log('this is new datapost ====>', data);
+          this.router.navigate(['login']);
         })
     }
     // console.log(this.Add_User);

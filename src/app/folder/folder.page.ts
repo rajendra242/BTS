@@ -44,7 +44,7 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     // console.log('===========================>',this.folder)
     let loading = await this.loadingCtrl.create({
-      message: 'loding News...'
+      message: 'News...'
     });
     await loading.present();
 
@@ -61,7 +61,7 @@ export class FolderPage implements OnInit {
     this.page++;
 
     let loading = await this.loadingCtrl.create({
-      message: 'Loding More News...'
+      message: 'More News...'
     });
     await loading.present();
 

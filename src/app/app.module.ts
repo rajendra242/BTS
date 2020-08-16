@@ -11,11 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// import { SingalnewsPage } from './singalnews/singalnews.page';
+// import { FolderPage } from './folder/folder.page';
+
 import { File } from '@ionic-native/file/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
-// import { SocialSharing } from "@ionic-native/social-sharing";
 
-// import { FolderPage } from './folder/folder.page';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import { AuthService } from './auth.service';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';

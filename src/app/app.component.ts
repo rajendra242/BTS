@@ -1,6 +1,7 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, NgZone } from '@angular/core';
 import { Router } from "@angular/router";
-
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
 import { Platform, MenuController, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -10,7 +11,7 @@ import { ɵPLATFORM_SERVER_ID } from '@angular/common';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import { SingalnewsPage } from './singalnews/singalnews.page';
 import { FolderPage } from './folder/folder.page';
-
+import { SettingPage } from './setting/setting.page'
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,9 @@ export class AppComponent implements OnInit {
   userId: any;
   public appPages: any = [];
   posts: Object;
+  userInfo: any;
+  backButtonSubscription;
+
 
   constructor(
     private platform: Platform,
@@ -33,22 +37,33 @@ export class AppComponent implements OnInit {
     private Auth: AuthService,
     private http: HttpClient,
     private navController: NavController,
-    private deeplinks: Deeplinks)
-     {
+    private zone: NgZone,
+    private deeplinks: Deeplinks) {
 
+
+    this.userInfo = JSON.parse(localStorage.getItem('data'))
     this.initializeApp();
+
+    this.Auth.isLoggeIn.subscribe((data) => {
+      if (data === 'loggedIn') {
+        this.userInfo = JSON.parse(localStorage.getItem('data'));
+      }
+    });
+    // this.backButtonEvent();
 
     this.platform.ready().then(() => {
       this.deeplinks.route({
-        '/folder/folder': FolderPage,
-        '/singalnews': SingalnewsPage
+        '/singalnews/:id': SingalnewsPage,
+        '/': {}
       }).subscribe((match) => {
-        console.log('successfully matched route', match)
+        let id = match.$args['id'];
+        this.router.navigate(["singalnews/" + id])
       },
         (nomatch) => {
-          console.error('Got a deeplink that didn\'t match', nomatch);
+          alert(JSON.stringify(nomatch));
         })
     })
+
   }
 
 
@@ -66,8 +81,20 @@ export class AppComponent implements OnInit {
         console.log('==============>', this.appPages)
       });
     });
+
+
+  }
+  ngAfterViewInit() {
+    this.platform.backButton.subscribe();
+    this.backButtonSubscription = this.platform.backButton.subscribe(() => {
+      navigator['app'].exitApp();
+    });
+
+
   }
 
+  
+  ngOnDestroy() { this.backButtonSubscription.unsubscribe(); }
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
@@ -75,12 +102,19 @@ export class AppComponent implements OnInit {
     }
 
 
-    var demo: any = JSON.parse(localStorage.getItem("data"));
-    console.log(demo);
-    if (demo) {
-      this.router.navigate(['folder/folder']);
+    // var demo: any = JSON.parse(localStorage.getItem("data"));
+    // console.log(demo);
+    // if (demo) {
+    //   this.router.navigate(['folder/folder']);
+    // } else {
+    //   this.router.navigate(['login'])
+    // }
+
+    if (!this.userInfo) {
+      this.router.navigate(['login']);
     } else {
-      this.router.navigate(['login'])
+      this.userInfo = JSON.parse(localStorage.getItem("data"));
+      this.router.navigate(['folder/folder']);
     }
   }
   Logout() {

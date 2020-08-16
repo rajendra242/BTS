@@ -9,8 +9,9 @@
 
 <ion-content>
   <ion-list>
-    <a *ngFor="let post of posts" [routerLink]="['/', 'singalnews',post.id]">
-      <ion-item>
+    <!-- <a *ngFor="let post of posts" (click)="navigat(post.id)"> -->
+      <ion-item *ngFor="let post of posts  let i = index">
+        <!-- [routerLink]="['/', 'singalnews',post.id]" -->
         <ion-avatar slot="start">
           <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
         </ion-avatar>
@@ -18,9 +19,12 @@
           <h2 [innerHTML]="post.title.rendered"></h2>
           <h3>{{post.date_gmt | date}}</h3>
           <p [innerHTML]="post.excerpt.rendered"></p>
-          <!-- <ion-router-link color="tertiary" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-router-link> -->
+          <ion-button class="ion-ripple-effect" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-button>
+          <ion-button (click)="removeBookmark(post.id,i)">Remove</ion-button>
         </ion-label>
       </ion-item>
-    </a>
+     
+    <!-- </a> -->
+   
   </ion-list>
 </ion-content>

@@ -22,6 +22,8 @@ export class LoginPage implements OnInit {
   add_user_url: any;
   user_login_google: any;
   user_login_google_email: any;
+  isError: boolean = false;
+  errorMessage: any;
 
 
   constructor(
@@ -50,22 +52,34 @@ export class LoginPage implements OnInit {
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
     this.add_user_url = 'https://btp-test.mylionsgroup.com/wp-json/custom-plugin/add_user_categories';
+
     this.Auth.login(value).subscribe((data) => {
       console.log('===> Wordpress User Login ==>', data);
+      // this.isError = false;
       JSON.stringify(data);
       this.Login_Api = data;
+
       localStorage.setItem("data", JSON.stringify(this.Login_Api));
       localStorage.setItem('userId', JSON.stringify(data['ID']))
       console.log("Success", this.Login_Api)
       this.router.navigate(['folder/folder'], { state: value })
       return this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/add_user_categories?user_id=${data['ID']}`, { headers, responseType: 'text', }).subscribe((data) => {
-
-        // return this.http.post(this.add_user_url, `user_id=${data['ID']}`, { headers, responseType: 'text' }).subscribe((data) => {
         console.log("New User Login Catagories", data);
       });
 
-
-    });
+    }, (err) => {
+      console.log(err.status)
+      if (err.status == 400) {
+        this.errorMessage = "Check your Email/Password and try again";
+      } else if (err.status == 404) {
+        this.errorMessage = "Please check out the connection and try again";
+      } else if (err.status == 500) {
+        this.errorMessage = "Username/password Wrong";
+      }
+      this.isError = true;
+      console.log("err in login ", err);
+    })
+    console.log(value);
   }
 
   async doGoogleLogin() {
@@ -109,6 +123,7 @@ export class LoginPage implements OnInit {
               return this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/login_google?user_email=${check_data[0].user_email}`, { headers, responseType: 'text', }).subscribe((datapost) => {
                 //console.log('google data', data)
                 localStorage.setItem('google_user', JSON.stringify(datapost));
+                localStorage.setItem('data', JSON.stringify(datapost));
                 console.log('ANIL', datapost)
                 if (datapost != "false") {
                   console.log('else', check_data[0].ID)
@@ -140,6 +155,7 @@ export class LoginPage implements OnInit {
                     let user_ID = localStorage.getItem('userId')
                     console.log(datapost)
                     if (datapost != 'false') {
+                      // console.log('ffffff')
                       return this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/add_user_categories?user_id=${datapost}`, { headers, responseType: 'text', }).subscribe((add_cat_data) => {
                         // return this.http.post(this.add_user_url, `user_id=${datapost}`, { headers, responseType: 'text' }).subscribe((add_cat_data) => {
                         this.router.navigate(['folder/folder']);
@@ -162,7 +178,7 @@ export class LoginPage implements OnInit {
 
 
 
-  FBlogin() {
+  FbLogin() {
     this.fb.login(['public_profile', 'user_friends', 'email'])
       .then((res: FacebookLoginResponse) => {
         console.log('Logged into Facebook!', res)

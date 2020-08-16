@@ -7,3 +7,10 @@ ion-buttons{
 a{
     text-decoration: none;
 }
+ion-content{
+    ion-buttons{
+        .ion-ripple-effect{
+        background-color: black !important;
+       }
+    }
+}

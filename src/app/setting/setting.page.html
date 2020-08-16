@@ -8,8 +8,21 @@
     <ion-title>options</ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content>
-    <div>
-      <ion-router-link [routerLink]="['/', 'bookmark']"><ion-icon name="bookmark"></ion-icon>Book Marks</ion-router-link>
-    </div>
+  <!-- <ion-router-link [routerLink]="['/', 'bookmark']"> -->
+    <!-- <ion-icon name="bookmark"></ion-icon> -->
+    <!-- <h5>Bookmarks</h5> -->
+  <!-- </ion-router-link> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-col>
+      <ion-col size="9">
+        <ion-router-link [routerLink]="['/', 'bookmark']">Bookmarks</ion-router-link>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

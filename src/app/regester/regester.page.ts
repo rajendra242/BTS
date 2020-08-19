@@ -32,7 +32,14 @@ export class RegesterPage implements OnInit {
     console.log(value.password)
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     this.Add_User = `https://btp-test.mylionsgroup.com/wp-json/custom-plugin/register`;
-    if (value.password !== value.confirmPassword) {
+
+    if (value.username == '' || value.email == '' || value.password == '') {
+      const toast = await this.toastCtrl.create({
+        message: 'Please Enter all field.',
+        duration: 2000
+      })
+      toast.present();
+    } else if (value.password !== value.confirmPassword) {
       const toast = await this.toastCtrl.create({
         message: 'enter correct password.',
         duration: 2000

@@ -21,6 +21,9 @@ import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import { AuthService } from './auth.service';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
+
+import { OneSignal } from '@ionic-native/onesignal/ngx';
+
 // import { Firebase } from '@ionic-native/firebase/ngx';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFirestoreModule } from '@angularfire2/firestore';
@@ -61,7 +64,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     AuthService,
     NavController,
     Deeplinks,
-    
+    OneSignal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

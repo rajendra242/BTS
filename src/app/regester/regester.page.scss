@@ -1,5 +1,6 @@
 ion-content.background{
     --background: url(../../assets/hello1.png);
+    // background-color: white;
     background-repeat: no-repeat;
     
 }   
@@ -7,9 +8,15 @@ ion-col{
     margin-top: 15%;
 }
 img{
-    height: 50%;
-    width: 40%;
+    height: 25%;
+    width: 25%;
 }
 ion-button {
     --background: #ebd507;
+    color: black;
+}
+ion-item{
+    border : 1px solid black !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px;
 }

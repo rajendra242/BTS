@@ -1,8 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login"></ion-back-button>
-      <ion-title>{{post?.title.rendered}}</ion-title>
+      <ion-back-button defaultHref="/folder"></ion-back-button>
+      <ion-title>BTP</ion-title>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <button icon-only ion-button  [routerLink]="['/']">
+        <ion-icon name="home"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -13,6 +18,8 @@
     <!-- <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}"> -->
     <!-- <img [src]="post.media_url"> -->
     <img src="{{ post._embedded['wp:featuredmedia']['0'].media_details.sizes.thumbnail.source_url }}">
+    <h3 style=" margin: 10px 15px 2px 15px;">{{post?.title.rendered}}</h3>
+    <h6 style="color: red;  margin: 10px 15px 2px 15px;">{{post._embedded['wp:term']['0']['0'].name}}</h6>
     <div class="singalpage_text" [innerHTML]="post.content.rendered"></div>
 
     <!-- <ion-button (click)="Bookmark()" >Add To Bookmark</ion-button> -->

@@ -116,4 +116,5 @@ export class AuthService {
     return this.http.get(`https://btp-test.mylionsgroup.com//wp-json/custom-plugin/get_categoriesjj?user_id=${user}`)
   }
 
+
 }

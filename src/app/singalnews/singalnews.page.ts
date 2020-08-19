@@ -116,8 +116,9 @@ export class SingalnewsPage implements OnInit {
     // message, subject, file, url
     let msg = post.title.rendered
     let Url = 'https://btp-test.mylionsgroup.com/singalnews/';
+    let Urls = post.link
 
-    this.socialSharing.share(msg, null, null, Url + post.id).then(() => {
+    this.socialSharing.share(msg, null, null, Url + post.id ).then(() => {
       //
     })
       // this.socialSharing.share("btpapp://btpapp.com/?o=bar" +post.link + post.id, post.title, post.img,)

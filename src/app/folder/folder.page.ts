@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from "@angular/router";
 import { Route } from '@angular/compiler/src/core';
-import { LoadingController, NavController, NavParams } from '@ionic/angular';
+import { LoadingController, MenuController, NavController, NavParams } from '@ionic/angular';
 import { AuthService } from '../auth.service';
 // import { Events } from '@ionic/angular';
 
@@ -27,7 +27,9 @@ export class FolderPage implements OnInit {
     private router: Router,
     private loadingCtrl: LoadingController,
     private Auth: AuthService,
+    private menuCtrl : MenuController
   ) {
+    // this.menuCtrl.enable(true);
     // if(this.navParms.get('p_id') != null && this.navParms.get('p_id') != undefined){
     //   this.cat_id = this.navParms.get('p_id');
     // }
@@ -39,8 +41,13 @@ export class FolderPage implements OnInit {
 
 
   }
+  ionViewWillEnter() {
+    // this.menuCtrl.enable(false);
+    this.menuCtrl.enable(true);
 
+  }
   async ngOnInit() {
+    
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     // console.log('===========================>',this.folder)
     let loading = await this.loadingCtrl.create({
@@ -91,12 +98,26 @@ export class FolderPage implements OnInit {
       console.log("All Catagories ===>", this.appPages)
     })
   }
-  doRefresh(event) {
+  async doRefresh(refresher) {
     console.log('Begin async operation');
+    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    // console.log('===========================>',this.folder)
+    let loading = await this.loadingCtrl.create({
+      message: 'News...'
+    });
+    await loading.present();
+
+    this.Auth.getPosts().subscribe(res => {
+      console.log('info =====>:', res)
+      this.count = this.Auth.toatalPost;
+      this.posts = res;
+
+      loading.dismiss();
+    });
 
     setTimeout(() => {
       console.log('Async operation has ended');
-      event.target.complete();
+      refresher.target.complete();
     }, 2000);
 
   }

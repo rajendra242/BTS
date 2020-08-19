@@ -1,6 +1,6 @@
 img{
     width: 100%;
-    height: 160px;
+    height: auto;
     padding: 5%;
   }
 
@@ -8,7 +8,8 @@ img{
    padding: 15px;
  } 
 
- button{
+ ion-content{
+  button{
    background-color: red !important;
    margin: 20px;
    padding: 20px;
@@ -16,7 +17,9 @@ img{
    border-radius: 50%;
   
  }
- ion-icon{
+}
+  ion-content{
+   ion-icon{
    background-color: yellow !important;
    font-size: 50px !important;
    margin: 10px !important;
@@ -24,3 +27,12 @@ img{
    border-radius: 50%;
    float: right !important;
  }
+}
+ion-buttons{
+ button{
+  outline: none;
+  color: yellow;
+  font-size: 23px;
+  background-color: maroon;
+ }
+}

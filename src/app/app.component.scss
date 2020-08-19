@@ -120,10 +120,19 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 }
 ion-button{
-  background-color: black !important;
+  --background : black;
   color: white;
 }
 ion-label{
   outline: none !important;
   font-size: 15px !important;
+  margin:  0px 5px 10px 0px;
+}
+ion-row{
+  border-bottom: 1px solid grey;
+  margin: 10px 0px 0px 0px !important;
+}
+p{
+  margin: 0px !important; 
+  font-size: 18px;
 }

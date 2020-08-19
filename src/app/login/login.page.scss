@@ -28,3 +28,14 @@ ion-button{
         background-color: grey !important;
     }
 }
+ion-item{
+    border : 1px solid black !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px;
+}
+ion-input{
+    background-color:  transparent !important;
+}
+input:-internal-autofill-selected {
+    display:  none !important;
+}

@@ -1,44 +1,62 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content class="background" padding>
   <form [formGroup]="regester_Form_Data" (submit)="regesterUser(regester_Form_Data.value)">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12" class="settings">
-          <div text-center>
-            <!-- <IonImg src={logo.png} /> -->
-            <h1 style="text-align: center;"><img src="../../assets/logo.png" alt=""></h1>
+          <div style="margin-bottom: 20px;">
+            <h1>Sign up</h1>
           </div>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input name="username" type="name" formControlName="username" name='username' required></ion-input>
+            <p style="font-size: 12px !important;color: red;"
+              *ngIf="regester_Form_Data.controls['username'].errors && regester_Form_Data.controls['username'].dirty"
+              color="danger" padding>Minimum of 4 characters.</p>
+          </ion-item>
+          <!-- ===================email validation=========================== -->
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input style="text-transform: lowercase;" name="email" type="email" formControlName="email" name='email'
+              required></ion-input>
+            <p style="font-size: 12px !important;color: red;"
+              *ngIf="regester_Form_Data.controls['email'].errors && regester_Form_Data.controls['email'].dirty"
+              color="danger" padding>Email is not valid.</p>
+          </ion-item>
+          <!-- <div no-lines *ngIf="( regester_Form_Data.controls['email'].hasError('required') || regester_Form_Data.controls['email'].hasError['email'] ) && regester_Form_Data.controls['email'].touched">
+              <div class="error" *ngIf="regester_Form_Data.controls['email'].hasError('required') && regester_Form_Data.controls['email'].touched">
+                email is required
+              </div>
+              <div class="error" *ngIf="regester_Form_Data.controls['email'].hasError['email'] && regester_Form_Data.controls['email'].touched">
+                Please enter valid email
+              </div>
+            </div> -->
+          <!-- ====================password =============================== -->
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input name="password" type="password" formControlName="password" name='password' required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input name="confirmPassword" type="password" formControlName="confirmPassword" name='confirmPassword'
+              required></ion-input>
+          </ion-item>
+
           <div padding>
-            <ion-item>
-              <ion-input name="username" type="name" placeholder="Name" formControlName="username" name='username'
-                required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="email" type="email" placeholder="Email" formControlName="email"
-                name='email' required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="password" type="password" placeholder="Password" formControlName="password"
-                name='password' required></ion-input>
-            </ion-item>
-            
-            <ion-item>
-              <ion-input name="confirmPassword" type="password" placeholder="Confirm Password" formControlName="confirmPassword"
-                name='confirmPassword' required></ion-input>
-            </ion-item>
-          </div>
-          <div padding>
-            <ion-button class="color_setting" size="large" type="submit" expand="block">Register</ion-button>
+            <ion-button class="color_setting" type="submit" expand="block" [disabled]="!regester_Form_Data.valid">Sign
+              up</ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
+<p style="text-align: center;">New user? <a [routerLink]="['/', 'login']" style="color: #EC435A !important;">Login in</a> here</p>
 </ion-content>

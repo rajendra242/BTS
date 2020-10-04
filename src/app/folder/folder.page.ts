@@ -68,7 +68,7 @@ export class FolderPage implements OnInit {
     this.page++;
 
     let loading = await this.loadingCtrl.create({
-      message: 'More News...'
+      message: '<ion-img src="/assets/corona.jpg" alt="loading..."></ion-img>'
     });
     await loading.present();
 
@@ -103,7 +103,7 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     // console.log('===========================>',this.folder)
     let loading = await this.loadingCtrl.create({
-      message: 'News...'
+      message:'<ion-img src="/assets/corona.jpg" alt="loading..."></ion-img>'
     });
     await loading.present();
 

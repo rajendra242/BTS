@@ -19,8 +19,8 @@
           <h2 [innerHTML]="post.title.rendered"></h2>
           <h3>{{post.date_gmt | date}}</h3>
           <p [innerHTML]="post.excerpt.rendered"></p>
-          <ion-button class="ion-ripple-effect" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-button>
-          <ion-button (click)="removeBookmark(post.id,i)">Remove</ion-button>
+          <ion-button class="readmore" [routerLink]="['/', 'singalnews',post.id]">Readmore</ion-button>
+          <ion-button class="remove" (click)="removeBookmark(post.id,i)">Remove</ion-button>
         </ion-label>
       </ion-item>
      

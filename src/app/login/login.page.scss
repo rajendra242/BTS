@@ -1,20 +1,24 @@
 ion-content.background{
-    --background: url(../../assets/hello1.png);
-    background-repeat: no-repeat;
+    --background: url(../../assets/hello3.png);
+    // height: 500px !important;
+    // width:500px !important ;
+    // --background-repeat: no-repeat !important;
     
 }  
-ion-input{
-    background-color: white !important;;
-} 
-ion-col{
-    margin-top: 20%;
+// ion-input{
+//     background-color: white !important;;
+// } 
+form{
+    ion-col{
+        margin-top: 60%;
+    }
 }
 img{
     height: 50%;
     width: 40%;
 }
 ion-button{
-    --background: #ebd507;
+    --background: #EC435A;
     margin-top: 10px;
 }
 .regester ion-button{
@@ -28,14 +32,24 @@ ion-button{
         background-color: grey !important;
     }
 }
+
 ion-item{
-    border : 1px solid black !important;
-    border-radius: 10px !important;
-    margin-bottom: 10px;
+    --background: transparent !important;
+    
 }
 ion-input{
-    background-color:  transparent !important;
+        --background: transparent !important;
 }
 input:-internal-autofill-selected {
     display:  none !important;
+}
+h1{
+    font-weight: bold   ;   
+    border-bottom: 3px solid black;
+    display: inline !important;
+    padding-bottom:10px !important;
+}
+ion-item.item-has-focus > ion-label{
+    color:  black  !important;
+    --border-color: black !important;
 }

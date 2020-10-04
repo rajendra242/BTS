@@ -26,11 +26,11 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 ion-toolbar {
-    --background: maroon;
-    color: yellow;
+    --background: yellow;
+    color: black;
   }
   ion-back-button{
-    color: yellow !important;
+    color: black !important;
   }
 
 .toast-container{

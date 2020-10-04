@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
 
 // import { SingalnewsPage } from './singalnews/singalnews.page';
 // import { FolderPage } from './folder/folder.page';
@@ -65,6 +66,8 @@ import { OneSignal } from '@ionic-native/onesignal/ngx';
     NavController,
     Deeplinks,
     OneSignal,
+    FCM,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

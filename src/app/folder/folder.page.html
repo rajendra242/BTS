@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button (click)="open_menu()"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Posts</ion-title>
+    <ion-title style="margin-left: 65px;">Posts</ion-title>
     <ion-buttons slot="end">
       <button icon-only ion-button  [routerLink]="['/', 'setting']">
         <ion-icon name="settings"></ion-icon>
@@ -25,7 +25,17 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>  
   <section class="banner">
-    <div style="background-image: url(../../assets/news.jpg);" class="banner_img"></div>
+    <ion-slides pager="true">
+      <ion-slide>
+        <img src="../../assets/DHONI.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/corona.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/news.jpg">
+      </ion-slide>
+    </ion-slides> 
   </section>
   <ion-list>
     <ion-list-header>

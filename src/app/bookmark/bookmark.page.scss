@@ -1,16 +1,18 @@
 ion-back-button{
-    background-color: maroon;
+    background-color: yellow;
 }
 ion-buttons{
-    background-color: maroon;
+    background-color: yellow;
 }
 a{
     text-decoration: none;
 }
-ion-content{
-    ion-buttons{
-        .ion-ripple-effect{
-        background-color: black !important;
-       }
+// ion-content{
+    ion-item{
+        ion-buttons{
+            .readmore{
+                --background : black !important;
+            }
+        }
     }
-}
+// }

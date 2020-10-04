@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
-import { Platform, MenuController, NavController,AlertController } from '@ionic/angular';
+import { Platform, MenuController, NavController, AlertController } from '@ionic/angular';
 
 // import { GooglePlus } from '@ionic-native/google-plus/';
 
@@ -27,18 +27,17 @@ export class LoginPage implements OnInit {
   errorMessage: any;
   fbdetail: any;
 
-
+  dtoken :any;
   constructor(
     private http: HttpClient,
     private Auth: AuthService,
     private router: Router,
     private googlePlus: GooglePlus,
-    private menuCtrl : MenuController,
+    private menuCtrl: MenuController,
     public fb: Facebook
     // private headers : HttpHeaders
   ) {
-    
-    this.menuCtrl.enable(false,'main-content');
+
     this.Login_Form_Data = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
@@ -50,10 +49,11 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.dtoken = localStorage.getItem('deviceToken');
 
   }
-  ionViewWillEnter() {
-    
+  ionViewDidEnter(): void {
+    this.menuCtrl.enable(false);
   }
 
 
@@ -127,7 +127,7 @@ export class LoginPage implements OnInit {
         console.log('google');
         this.http.post(this.api, `email=${this.user_login_google_email}`, { headers })
           .subscribe((check_data) => {
-            console.log(check_data)
+            console.log("===================>", check_data)
 
             if (check_data['error'] != 'empty') {
               localStorage.setItem('userId', check_data[0].ID)
@@ -136,7 +136,7 @@ export class LoginPage implements OnInit {
                 //console.log('google data', data)
                 localStorage.setItem('google_user', JSON.stringify(datapost));
                 localStorage.setItem('data', JSON.stringify(datapost));
-                console.log('ANIL', datapost)
+                // console.log('ANIL', datapost)
                 if (datapost != "false") {
                   console.log('else', check_data[0].ID)
                   return this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/add_user_categories?user_id=${check_data[0].ID}`, { headers, responseType: 'text', }).subscribe((add_cat_data) => {
@@ -155,9 +155,10 @@ export class LoginPage implements OnInit {
               })
             } else {
               console.log('some')
+
               console.log('user_login in else ===>', this.user_login_google)
               console.log('user_email in else ===>', this.user_login_google_email)
-              return this.http.post(insertgoogle, `user_login=${this.user_login_google}&user_email=${this.user_login_google_email}`, { headers, responseType: 'text' }).subscribe((insert_data) => {
+              return this.http.post(insertgoogle, `user_login=${this.user_login_google}&user_email=${this.user_login_google_email}&user_activation_key=${this.dtoken}`, { headers, responseType: 'text' }).subscribe((insert_data) => {
                 console.log("inser data", insert_data);
                 if (insert_data) {
                   this.http.get(`https://btp-test.mylionsgroup.com/wp-json/custom-plugin/login_google?user_email=${this.user_login_google_email}`, { headers, responseType: 'text' }).subscribe((datapost) => {

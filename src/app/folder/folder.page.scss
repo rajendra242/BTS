@@ -30,24 +30,24 @@ ion-menu-button {
 //   width: 100%;
 //   height: 160px;
 // }
-ion-content{
-  --background: url(../../assets/news.jpg) no-repeat top/contain fixed;
-}
+// ion-content{
+//   --background: url(../../assets/news.jpg) no-repeat top/contain fixed;
+// }
 ion-toolbar {
-  --background: maroon;
-  color: yellow;
+  --background: yellow;
+  color: black;
 }
 ion-menu-button{
-  color: yellow;
+  color: black;
 }
 ion-buttons button{
   outline: none;
-  color: yellow;
+  color: black;
   font-size: 23px;
-  background-color: maroon;
+  background-color: yellow;
 }
 ion-list{
-  margin-top: 50%;
+  // margin-top: 50%;
 }
 a{
   text-decoration: none !important;

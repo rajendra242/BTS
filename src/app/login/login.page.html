@@ -3,37 +3,46 @@
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12" class="settings">
-          <div text-center>
-            <!-- <IonImg src={logo.png} /> -->
-            <h1 style="text-align: center;"><img src="../../assets/logo.png" alt=""></h1>
+          <div style="margin-bottom: 20px;">
+            <h1>Login</h1>
           </div>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input formControlName="username" name='username' required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="password" name='password' required></ion-input>
+          </ion-item>
 
-
-        <!-- Google Login -->
-       
           <div padding>
-            <ion-item>
-              <ion-input name="email" type="email" placeholder="Username" formControlName="username" name='username' required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="password" type="password" placeholder="Password" formControlName="password" name='password' required></ion-input>
-            </ion-item>
-          </div>
-          <div padding>
-            <ion-button class="color_setting" size="large" type="submit" expand="block">Login</ion-button>
+            <ion-button class="color_setting" type="submit" expand="block">Login</ion-button>
           </div>
 
           <div class="regester">
-            <ion-button [routerLink]="['/regester']" expand="block" >Register</ion-button>
+            <ion-button [routerLink]="['/regester']" expand="block">Sign up</ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
+
+
   </form>
 
-  <ion-button expand="block" color="danger" (click)="doGoogleLogin()">Google Login</ion-button>
-  <ion-button expand="block" color="danger" (click)="FbLogin()">facebook Login</ion-button>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button style="font-size:9px;" expand="block" color="primary" (click)="doGoogleLogin()">
+          <ion-icon style="padding: 3px;" name="logo-google"></ion-icon>Login with Google
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button style="font-size:9px; --background : #4460A0;" expand="block" (click)="FbLogin()">
+          <ion-icon style="padding: 5px;" name="logo-facebook"></ion-icon>Login with Facebook
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <p style="color: red; font-size: 20px;" *ngIf="isError">{{errorMessage}}</p>
 </ion-content>
 

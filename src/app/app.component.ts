@@ -14,6 +14,7 @@ import { FolderPage } from './folder/folder.page';
 import { SettingPage } from './setting/setting.page'
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { async } from '@angular/core/testing';
+import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
     private navController: NavController,
     private zone: NgZone,
     private oneSignal: OneSignal,
+    private fcm: FCM,
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
     private deeplinks: Deeplinks) {
@@ -70,8 +72,8 @@ export class AppComponent implements OnInit {
           // this.router.navigate(['singalnews/'+id])
         })
     })
-
   }
+  
 
 
   // ****Update****
@@ -82,6 +84,13 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
+      this.getNotification();
+      this.statusBar.backgroundColorByHexString('#0575E6');
+      setTimeout(()=>{
+        this.splashScreen.hide();
+      },700)
+
+      
       this.Auth.getObservable().subscribe((data) => {
         console.log('Data received', data);
         this.appPages = data['foo']
@@ -95,39 +104,48 @@ export class AppComponent implements OnInit {
   }
 
 
-  // setupPush() {
-  //   this.oneSignal.startInit('c6cdff6c-12f5-4b0d-ac6e-616c9e17bc27');
-  //   this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
-  //   this.oneSignal.handleNotificationReceived().subscribe(data => {
-  //     let msg = data.payload.body;
-  //     let title = data.payload.title;
-  //     let additionalData = data.payload.additionalData;
-  //     this.showAlert(title, msg, additionalData.task);
-  //   });
-  //   this.oneSignal.handleNotificationOpened().subscribe(data => {
-  //     // Just a note that the data is a different place here!
-  //     let additionalData = data.notification.payload.additionalData;
+  /**
+   * Get Notification
+   */
+  getNotification() {
+    this.getToken();
+    this.fcm.clearAllNotifications();
+    this.fcm.onTokenRefresh().subscribe(token => {
+      console.log("reresh token", token);
+    });
 
-  //     this.showAlert('Notification opened', 'You already read this before', additionalData.task);
-  //   });
+    this.fcm.onNotification().subscribe(data => {
+      console.log("notification data", data)
+      if (data.wasTapped) {
+        console.log("Received in background");
+        console.log(data.image);
 
-  // }
-  // async showAlert(title, msg, task) {
-  //   const alert = await this.alertCtrl.create({
-  //     header: title,
-  //     subHeader: msg,
-  //     buttons: [
-  //       {
-  //         text: `Action: ${task}`,
-  //         handler: () => {
-  //           // E.g: Navigate to a specific screen
-  //         }
-  //       }
-  //     ]
-  //   })
-  //   alert.present();
-  // }
+      } else {
+        console.log("Received in foreground");
+      };
+    });
+  }
 
+ /**
+  * Get DeviceToken
+  */
+  getToken() {
+    // let devicetoken_api = 'http://localhost/btplive/wordpress/wp-json/custom-plugin/devicetoken'
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.fcm.getToken().then(token => {
+      console.log('token======>', token);
+      localStorage.setItem('deviceToken', token);
+      let storetoken = JSON.stringify(token);
+    //  return this.http.post(devicetoken_api,`user_devicetoken=${storetoken}`,{headers,responseType: 'text'}).subscribe((data)=>{
+    //     console.log("===============> Devictoken Response",data)
+    //   })
+      
+      // console.log("in local sstorage", localStorage.getItem('deviceToken'));
+    });
+  }
+ 
+ 
   ngAfterViewInit() {
     this.platform.backButton.subscribe();
     this.backButtonSubscription = this.platform.backButton.subscribe(() => {
